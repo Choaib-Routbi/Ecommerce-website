@@ -14,12 +14,15 @@ body {
   overflow-x: hidden;
 }
 .section {
-  height: 93vh;
+  height: calc(100vh - 55px);
+  margin-top: 45px;
+  padding-bottom: 20px;
   overflow-x: hidden;
   overflow-y: hidden;
+  box-sizing: border-box;
 }
 .home {
-  height: 93vh;
+  height: calc(100vh - 55px);
   margin-top: 45px;
   padding-bottom: 20px;
 }
@@ -35,8 +38,8 @@ body {
 } */
 
 .home-container {
+  height: 100%;
   display: grid;
-  height: calc(100% - 25px);
   box-sizing: border-box;
   border: solid 1px #3f3c3c;
   margin-top: 20px;
@@ -103,7 +106,7 @@ body {
       color: aliceblue;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           s ease;
+      transition: all 0.2s ease;
       grid-column: span 3;
       padding: 0px 50px;
     }
@@ -191,9 +194,12 @@ body {
   padding: 10px 25px;
   margin: 10px 20pxpx;
   border-radius: 10px;
-  background-color: #212830;
-  background: transparent;
+  background-color: #21283083;
+  /* background: transparent; */
     /* ------adjust-bg------- */
+    a{
+      text-decoration: none;
+    }
   .logo {
     font-size: 1rem;
     font-weight: 600;
@@ -243,6 +249,9 @@ body {
     fill: var(--primary-color);
   }
 }
+.nav-btn.active{
+  color: var(--primary-color);
+}
 .collections-container {
   height: calc(100vh - 0px);
   border: solid 1px #3f3c3c;
@@ -265,7 +274,7 @@ body {
   border-radius: 10px;
   border: none;
   background-color: var(--main-background);
-  background: transparent;
+  /* background: transparent; */
     /* ------adjust-bg------- */
   color: aliceblue;
   box-sizing: border-box;
@@ -279,7 +288,7 @@ body {
   border-radius: 10px;
   border: none;
   background-color: var(--main-background);
-  background: transparent;
+  /* background: transparent; */
     /* ------adjust-bg------- */
   color: aliceblue;
   box-sizing: border-box;
@@ -294,7 +303,7 @@ body {
   border-radius: 10px;
   border: none;
   background-color: var(--main-background);
-  background: transparent;
+  /* background: transparent; */
     /* ------adjust-bg------- */
   color: aliceblue;
   box-sizing: border-box;
