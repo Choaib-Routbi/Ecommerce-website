@@ -103,13 +103,13 @@ body {
       color: aliceblue;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.1s ease;
+      transition: all 0.2s ease;
       grid-column: span 3;
       padding: 0px 50px;
     }
     .discover:hover {
       background-color: #3f3c3c56;
-      box-shadow: 0px 0px 20px #ff6702;
+      box-shadow: 0px 0px 10px #ff6702;
     }
     .discover:active {
       transform: scale(0.95);

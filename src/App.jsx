@@ -1,7 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 
 function App() {
+
+  // useEffect(
+  //   fetch('https://fakestoreapi.com/products')
+  // .then(response => response.json())
+  // .then(data => console.log(data))  
+  fetch('https://kolzsticks.github.io/Free-Ecommerce-Products-Api/main/products.json')
+  .then(res => res.json())
+  .then(data => {
+     console.log(data);
+      // Gaming Mice
+      // Keyboards
+      // Headsets
+      // Controllers
+     
+  });
+
+  
   return (
     <div className="app-container">
         <nav className="navbar">
