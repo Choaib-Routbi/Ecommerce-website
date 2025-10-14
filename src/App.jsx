@@ -1,22 +1,20 @@
-import React, { useEffect, useState } from "react";
-import "./style.css";
+import { useState, useEffect } from 'react';
+import "./index.css";
 
 function App() {
+ const [products,setProducts]=useState([])
 
-  // useEffect(
-  //   fetch('https://fakestoreapi.com/products')
-  // .then(response => response.json())
-  // .then(data => console.log(data))  
-  fetch('https://kolzsticks.github.io/Free-Ecommerce-Products-Api/main/products.json')
-  .then(res => res.json())
-  .then(data => {
-     console.log(data);
-      // Gaming Mice
-      // Keyboards
-      // Headsets
-      // Controllers
+
+   fetch('https://api.jsonbin.io/v3/qs/68ee5da5ae596e708f13616e')
+   .then(res => res.json())
+   .then(data => {
+     console.log(data.record);
+     console.log(products );
      
-  });
+     // Gaming Mice// Keyboards// Headsets// Controllers
+     
+    })
+
 
   
   return (
@@ -32,8 +30,8 @@ function App() {
           </div>
           <div className="nav-btns-container">
             <button className="nav-btn">home</button>
-            <button className="nav-btn">products</button>
             <button className="nav-btn">collections</button>
+            <button className="nav-btn">products</button>
             <button className="nav-btn">popular</button>
             <button className="nav-btn">about</button>
           </div>
@@ -90,14 +88,14 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="section products">
-        <div className="products-container">
-          <span className="section-title">products</span>
-        </div>
-      </div>
       <div className="section collections">
         <div className="collections-container">
           <span className="section-title">collections</span>
+        </div>
+      </div>
+      <div className="section products">
+        <div className="products-container">
+          <span className="section-title">products</span>
         </div>
       </div>
       <div className="section topSales">

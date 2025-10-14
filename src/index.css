@@ -103,7 +103,7 @@ body {
       color: aliceblue;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           s ease;
       grid-column: span 3;
       padding: 0px 50px;
     }
@@ -243,7 +243,7 @@ body {
     fill: var(--primary-color);
   }
 }
-.products-container {
+.collections-container {
   height: calc(100vh - 0px);
   border: solid 1px #3f3c3c;
   margin-top: 20px;
@@ -251,13 +251,13 @@ body {
   border-radius: 10px;
   border: none;
   background-color: var(--main-background);
-  background: transparent;
+  /* background: transparent; */
     /* ------adjust-bg------- */
   color: aliceblue;
   box-sizing: border-box;
   overflow: hidden;
 }
-.collections-container {
+.products-container {
   height: calc(100vh - 0px);
   border: solid 1px #3f3c3c;
   margin-top: 20px;
