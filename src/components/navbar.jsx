@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
-const [navtoggleARG,setNavtoggleARG]= useState(true)
+const [navtoggleARG,setNavtoggleARG]= useState(false)
 
 const navToggle = () =>{
 setNavtoggleARG(prev => !prev);
@@ -20,7 +20,16 @@ if (navtoggleARG) {
     
 
 
+useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 600) {
+        setNavtoggleARG(true); // show menu
+      }
+    };
 
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
 
 
@@ -28,6 +37,7 @@ if (navtoggleARG) {
     <nav className="navbar">
       <div className="logo">logo</div>
       <div className="nav-btns-container">
+      
         {
             navtoggleARG ?
         <>
