@@ -2,10 +2,12 @@ import { useState , useEffect } from "react";
 
 const Home = () => {
 
-      const targetDate = new Date("2025-10-15T20:59:59"); // 🎯 your countdown target
+      const targetDate = new Date("2025-10-17T20:59:59"); // 🎯 your countdown target
 
   const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
 
+
+//   countdown 
   function getTimeRemaining() {
     const now = new Date();
     const total = targetDate - now;
@@ -33,7 +35,7 @@ const Home = () => {
       setTimeLeft(remaining);
     }, 1000);
 
-    return () => clearInterval(timer); // 🧹 cleanup on unmount
+    return () => clearInterval(timer);
   }, []);
   return (
     <div className="section home">
