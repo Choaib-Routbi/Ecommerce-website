@@ -1,6 +1,40 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 
 const Home = () => {
+
+      const targetDate = new Date("2025-10-15T20:59:59"); // 🎯 your countdown target
+
+  const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
+
+  function getTimeRemaining() {
+    const now = new Date();
+    const total = targetDate - now;
+
+    const seconds = Math.floor((total / 1000) % 60);
+    const minutes = Math.floor((total / 1000 / 60) % 60);
+    const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+    const days = Math.floor(total / (1000 * 60 * 60 * 24));
+
+    return {
+      total,
+      days,
+      hours,
+      minutes,
+      seconds
+    };
+  }
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const remaining = getTimeRemaining();
+      if (remaining.total <= 0) {
+        clearInterval(timer);
+      }
+      setTimeLeft(remaining);
+    }, 1000);
+
+    return () => clearInterval(timer); // 🧹 cleanup on unmount
+  }, []);
   return (
     <div className="section home">
       <div className="home-blury-bg"></div>
@@ -32,7 +66,12 @@ const Home = () => {
                 Claim your upgrades before the clock runs out
               </p>
             </div>
-            <div className="home-off-countdown">03:00:00 h</div>
+            <div className="home-off-countdown"><div className="countdown">
+      <span>{timeLeft.days}d </span>
+      <span>{String(timeLeft.hours).padStart(2, '0')}h:</span>
+      <span>{String(timeLeft.minutes).padStart(2, '0')}m:</span>
+      <span>{String(timeLeft.seconds).padStart(2, '0')}s</span>
+    </div></div>
           </div>
           <div className="home-off-grid">
             <div className="home-off-card">product</div>
