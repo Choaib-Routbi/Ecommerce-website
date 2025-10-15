@@ -10,7 +10,10 @@ body {
   padding: 5px 20px;
   font-family: "Inter", sans-serif;
   background-color: #0d0f16;
-  background: linear-gradient(120deg, #0b0f1a 0%, #1e2844 100%);
+  /* background: linear-gradient(120deg, #0b0f1a 0%, #1e2844 100%); */
+  background-image: url(./assets/heroBG.jpg);
+  background-size: cover;
+  background-position: center;
   color: #f5f8fd;
   overflow-x: hidden;
 }
@@ -52,7 +55,8 @@ body {
   border-radius: 10px;
   border: none;
   background-color: var(--main-background);
-  background: transparent; /* ------adjust-bg------- */
+  background: transparent; 
+  /* ------adjust-bg------- */
   color: aliceblue;
   box-sizing: border-box;
   h1 {
@@ -173,7 +177,7 @@ body {
       display: flex;
       gap: 20px;
       .home-off-card {
-        background-color: #3f3c3c56;
+        background-color: #13161f83;
         border-radius: 5px;
         padding: 10px;
         text-align: center;

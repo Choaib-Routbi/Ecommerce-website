@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
-const [navtoggleARG,setNavtoggleARG]= useState(false)
+const [navtoggleARG,setNavtoggleARG]= useState(true)
 
 const navToggle = () =>{
 setNavtoggleARG(prev => !prev);
