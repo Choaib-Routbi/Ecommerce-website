@@ -352,6 +352,9 @@ body {
 .nav-btn.active {
   color: var(--primary-color);
 }
+.collections-container::-webkit-scrollbar{
+  display: none;
+}
 .collections-container {
   height: calc(100vh - 80px);
   border: solid 1px #3f3c3c;
@@ -364,7 +367,7 @@ body {
   /* ------adjust-bg------- */
   color: aliceblue;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-x: hidden ;
   .section-title{
     color: aliceblue;
     font-size: 1.5rem;
@@ -392,8 +395,36 @@ body {
       padding: 10px;
       display: grid;
       text-align: center;
+      align-content: center;
+      justify-items: center;
       .oneCollection-title{
-      margin: 0%;
+        margin: 0%;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-top: 150px;
+      }
+      .oneCollection-description{
+        font-size: 0.8rem;
+        width: 80%;
+      }
+      button{
+        padding: 5px 20px;
+        height: 30px;
+        width: 170px;
+        background-color: var(--hoverBG);
+        border: none;
+        outline: none;
+        transition: all ease-in-out 0.2s;
+        border-radius: 5px;
+        margin-top: 25px;
+        cursor: pointer;
+      }
+      button:hover{
+        background-color: var(--hoverBG);
+        box-shadow: 0px 0px 15px var(--shadowColor);
+      }
+      button:active{
+              transform: scale(0.9);
       }
     }
   }
@@ -510,4 +541,12 @@ body {
       }
     }
   }
+  .collections-container{
+
+    .collections-grid-container{
+      display: grid;
+      grid-template-columns: repeat(1, auto);  
+      gap: 30px;
+    }
+    }
 }
