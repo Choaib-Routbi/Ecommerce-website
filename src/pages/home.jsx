@@ -1,14 +1,12 @@
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 import ProductCard from "../components/product-card";
 
 const Home = () => {
-
-      const targetDate = new Date("2025-10-17T20:59:59"); // 🎯 your countdown target
+  const targetDate = new Date("2025-10-17T20:59:59"); // 🎯 your countdown target
 
   const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
 
-
-//   countdown 
+  //   countdown
   function getTimeRemaining() {
     const now = new Date();
     const total = targetDate - now;
@@ -23,7 +21,7 @@ const Home = () => {
       days,
       hours,
       minutes,
-      seconds
+      seconds,
     };
   }
 
@@ -63,23 +61,29 @@ const Home = () => {
             <div>
               <p className="home-off-title">
                 Special Offer : Up to{" "}
-                <span className="home-off-deal"> <br/>35% OFF</span>
+                <span className="home-off-deal">
+                  {" "}
+                  <br />
+                  35% OFF
+                </span>
               </p>
               <p className="home-off-subtitle">
                 Claim your upgrades before the clock runs out
               </p>
             </div>
-            <div className="home-off-countdown"><div className="countdown">
-      <span>{timeLeft.days}d </span>
-      <span>{String(timeLeft.hours).padStart(2, '0')}h:</span>
-      <span>{String(timeLeft.minutes).padStart(2, '0')}m:</span>
-      <span>{String(timeLeft.seconds).padStart(2, '0')}s</span>
-    </div></div>
+            <div className="home-off-countdown">
+              <div className="countdown">
+                <span>{timeLeft.days}d </span>
+                <span>{String(timeLeft.hours).padStart(2, "0")}h:</span>
+                <span>{String(timeLeft.minutes).padStart(2, "0")}m:</span>
+                <span>{String(timeLeft.seconds).padStart(2, "0")}s</span>
+              </div>
+            </div>
           </div>
           <div className="home-off-grid">
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
           </div>
         </div>
       </div>

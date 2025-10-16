@@ -1,26 +1,20 @@
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
-const [navtoggleARG,setNavtoggleARG]= useState(true)
+  const [navtoggleARG, setNavtoggleARG] = useState(true);
 
-const navToggle = () =>{
-setNavtoggleARG(prev => !prev);
-};
+  const navToggle = () => {
+    setNavtoggleARG((prev) => !prev);
+  };
 
-if (navtoggleARG) {
+  if (navtoggleARG) {
+    console.log("show");
+  } else {
+    console.log("hide");
+  }
 
-    console.log("show")
-}
- else {
-
-    console.log("hide")
-
- }
-    
-
-
-useEffect(() => {
+  useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 600) {
         setNavtoggleARG(true); // show menu
@@ -31,60 +25,54 @@ useEffect(() => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-
-
   return (
     <nav className="navbar">
       <div className="logo">logo</div>
       <div className="nav-btns-container">
-      
-        {
-            navtoggleARG ?
-        <>
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive ? "nav-btn active" : "nav-btn"
-          }
-        >
-          Home
-        </NavLink>
-        
-        <NavLink
-          to="/collections"
-          className={({ isActive }) =>
-            isActive ? "nav-btn active" : "nav-btn"
-          }
-        >
-          collections
-        </NavLink>
-        <NavLink
-          to="/products"
-          className={({ isActive }) =>
-            isActive ? "nav-btn active" : "nav-btn"
-          }
-        >
-          products
-        </NavLink>
-        <NavLink
-          to="/popular"
-          className={({ isActive }) =>
-            isActive ? "nav-btn active" : "nav-btn"
-          }
-        >
-          popular
-        </NavLink>
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            isActive ? "nav-btn active" : "nav-btn"
-          }
-        >
-          about
-        </NavLink>
-        </>
-        : null
-        }
+        {navtoggleARG ? (
+          <>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "nav-btn active" : "nav-btn"
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/collections"
+              className={({ isActive }) =>
+                isActive ? "nav-btn active" : "nav-btn"
+              }
+            >
+              collections
+            </NavLink>
+            <NavLink
+              to="/products"
+              className={({ isActive }) =>
+                isActive ? "nav-btn active" : "nav-btn"
+              }
+            >
+              products
+            </NavLink>
+            <NavLink
+              to="/popular"
+              className={({ isActive }) =>
+                isActive ? "nav-btn active" : "nav-btn"
+              }
+            >
+              popular
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? "nav-btn active" : "nav-btn"
+              }
+            >
+              about
+            </NavLink>
+          </>
+        ) : null}
 
         {/* <Link to="/products" className="nav-btn">products</Link>
         <Link to="/collections" className="nav-btn">collections</Link>
@@ -95,7 +83,6 @@ useEffect(() => {
         <svg
           className="nav-toggle"
           onClick={navToggle}
-
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 640 640"
         >

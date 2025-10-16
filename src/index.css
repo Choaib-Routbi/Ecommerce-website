@@ -1,5 +1,7 @@
 :root {
-  --primary-color: #ff7e57;
+  --primary-color: #00be85;
+  --hoverBG: #03dd9c;
+  --shadowColor: #03dd9c;
   --background-color: #0d0f16;
   --text-color: #1a1a1a;
   --main-background: #21283094;
@@ -24,7 +26,6 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
   scrollbar-color: #eeeeee00;
-  scrollbar-arrow-color: #ff6702;
 }
 .section::-webkit-scrollbar {
   display: none;
@@ -100,8 +101,8 @@ body {
       grid-column: span 2;
     }
     .shop:hover {
-      background-color: #ff6f3d;
-      box-shadow: 0px 0px 15px #ff6702;
+      background-color: var(--hoverBG);
+      box-shadow: 0px 0px 15px var(--shadowColor);
     }
     .shop:active {
       transform: scale(0.95);
@@ -119,7 +120,7 @@ body {
     }
     .discover:hover {
       background-color: #3f3c3c56;
-      box-shadow: 0px 0px 10px #ff6702;
+      box-shadow: 0px 0px 10px var(--shadowColor);
     }
     .discover:active {
       transform: scale(0.95);
@@ -204,7 +205,7 @@ body {
             scale: 1.2;
           }
         }
-        
+
         .card-infos {
           grid-row: span 2;
           height: 100%;
@@ -245,8 +246,8 @@ body {
               transition: all ease 0.2s;
             }
             .card-addtocartBtn:hover {
-              background-color: #ff6f3d;
-              box-shadow: 0px 0px 15px #ff6702;
+              background-color: var(--hoverBG);
+              box-shadow: 0px 0px 15px var(--shadowColor);
             }
             .card-addtocartBtn:active {
               transform: scale(0.9);
@@ -263,8 +264,8 @@ body {
               transition: all ease 0.2s;
             }
             svg:hover {
-              background-color: #ff6f3d;
-              box-shadow: 0px 0px 15px #ff6702;
+              background-color: var(--hoverBG);
+              box-shadow: 0px 0px 15px var(--shadowColor);
             }
             svg:active {
               transform: scale(0.9);
@@ -272,8 +273,8 @@ body {
           }
         }
       }
-      .home-off-card:hover{
-        background-color: #1c202e;
+      .home-off-card:hover {
+        background-color: #1a1d29;
       }
     }
   }
@@ -352,18 +353,50 @@ body {
   color: var(--primary-color);
 }
 .collections-container {
-  height: calc(100vh - 0px);
+  height: calc(100vh - 80px);
   border: solid 1px #3f3c3c;
   margin-top: 20px;
   padding: 10px 20px;
   border-radius: 10px;
   border: none;
   background-color: var(--main-background);
-  /* background: transparent; */
+  background: transparent;
   /* ------adjust-bg------- */
   color: aliceblue;
   box-sizing: border-box;
   overflow: hidden;
+  .section-title{
+    color: aliceblue;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Saira", sans-serif;
+  }
+  .section-subtitle{
+    margin-top: 0%;
+    color: #c1c1c1;
+  }
+  .collections-grid-container{  
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    height: 70%;
+    box-sizing: border-box;
+    .oneCollection{
+      background-color: var(--main-background);
+      border-radius: 10px;
+      box-sizing: border-box;
+      text-align: center;
+      height: 350px;  
+      padding: 10px;
+      display: grid;
+      text-align: center;
+      .oneCollection-title{
+      margin: 0%;
+      }
+    }
+  }
 }
 .products-container {
   height: calc(100vh - 0px);
