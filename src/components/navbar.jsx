@@ -49,14 +49,7 @@ useEffect(() => {
         >
           Home
         </NavLink>
-        <NavLink
-          to="/products"
-          className={({ isActive }) =>
-            isActive ? "nav-btn active" : "nav-btn"
-          }
-        >
-          products
-        </NavLink>
+        
         <NavLink
           to="/collections"
           className={({ isActive }) =>
@@ -64,6 +57,14 @@ useEffect(() => {
           }
         >
           collections
+        </NavLink>
+        <NavLink
+          to="/products"
+          className={({ isActive }) =>
+            isActive ? "nav-btn active" : "nav-btn"
+          }
+        >
+          products
         </NavLink>
         <NavLink
           to="/popular"

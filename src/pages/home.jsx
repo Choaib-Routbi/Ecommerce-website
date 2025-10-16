@@ -1,4 +1,5 @@
 import { useState , useEffect } from "react";
+import ProductCard from "../components/product-card";
 
 const Home = () => {
 
@@ -62,7 +63,7 @@ const Home = () => {
             <div>
               <p className="home-off-title">
                 Special Offer : Up to{" "}
-                <span className="home-off-deal">35% OFF</span>
+                <span className="home-off-deal"> <br/>35% OFF</span>
               </p>
               <p className="home-off-subtitle">
                 Claim your upgrades before the clock runs out
@@ -76,9 +77,9 @@ const Home = () => {
     </div></div>
           </div>
           <div className="home-off-grid">
-            <div className="home-off-card">product</div>
-            <div className="home-off-card">product</div>
-            <div className="home-off-card">product</div>
+            <ProductCard/>
+            <ProductCard/>
+            <ProductCard/>
           </div>
         </div>
       </div>
