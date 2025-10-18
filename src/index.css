@@ -134,7 +134,6 @@ body {
   }
   .home-off-container {
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
     .home-off-textHolder {
       grid-row: span 1;
       display: grid;
@@ -152,6 +151,7 @@ body {
         margin-bottom: 0%;
         .home-off-deal {
           color: var(--primary-color);
+          text-shadow: 2px 2px 5px var(--shadowColor);
           font-size: 1.7rem;
           font-weight: 700;
           font-family: "Shadows Into Light Two", cursive;
@@ -177,105 +177,8 @@ body {
       grid-row: span 2;
       display: flex;
       gap: 20px;
-      .home-off-card {
-        background-color: #161a27;
-        border-radius: 5px;
-        padding: 10px;
-        text-align: center;
-        width: 100%;
-        display: grid;
-        grid-template-rows: repeat(10, auto);
-
-        .card-img {
-          height: 100%;
-          grid-row: span 8;
-          overflow: hidden;
-          height: 150px;
-          .card-img-child {
-            width: 100%;
-            height: 100%;
-            background-image: url(assets/gaming-headphones3.webp);
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            transition: all ease-in-out 0.2s;
-            cursor: pointer;
-          }
-          .card-img-child:hover {
-            scale: 1.2;
-          }
-        }
-
-        .card-infos {
-          grid-row: span 2;
-          height: 100%;
-          display: grid;
-          .card-text {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            .card-titles {
-              grid-column: span 2;
-              text-align: left;
-              align-self: last baseline;
-              .card-product-category {
-                color: #c1c1c1;
-                font-size: 0.75rem;
-              }
-            }
-            .card-price {
-              text-align: right;
-              grid-column: span 1;
-              align-self: last baseline;
-            }
-          }
-          .card-btns {
-            display: flex;
-            gap: 10px;
-            justify-content: space-between;
-            .card-addtocartBtn {
-              box-sizing: border-box;
-              outline: none;
-              border: none;
-              background-color: var(--primary-color);
-              border-radius: 5px;
-              color: white;
-              padding: 3px 10px;
-              width: 100%;
-              height: 25px;
-              cursor: pointer;
-              transition: all ease 0.2s;
-            }
-            .card-addtocartBtn:hover {
-              background-color: var(--hoverBG);
-              box-shadow: 0px 0px 15px var(--shadowColor);
-            }
-            .card-addtocartBtn:active {
-              transform: scale(0.9);
-            }
-            svg {
-              box-sizing: border-box;
-              width: 25px;
-              cursor: pointer;
-              height: 25px;
-              fill: aliceblue;
-              background-color: var(--primary-color);
-              border-radius: 5px;
-              padding: 0px 2px;
-              transition: all ease 0.2s;
-            }
-            svg:hover {
-              background-color: var(--hoverBG);
-              box-shadow: 0px 0px 15px var(--shadowColor);
-            }
-            svg:active {
-              transform: scale(0.9);
-            }
-          }
-        }
-      }
-      .home-off-card:hover {
-        background-color: #1a1d29;
-      }
+      justify-content: center;
+      
     }
   }
 }
@@ -429,6 +332,9 @@ body {
     }
   }
 }
+.products-container::-webkit-scrollbar{
+  display: none;
+}
 .products-container {
   height: calc(100vh - 0px);
   border: solid 1px #3f3c3c;
@@ -437,11 +343,85 @@ body {
   border-radius: 10px;
   border: none;
   background-color: var(--main-background);
-  /* background: transparent; */
+  background: transparent;
   /* ------adjust-bg------- */
   color: aliceblue;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-x: hidden;
+  .products-section-banner{
+    min-height: 20vh;
+    max-height: 30vh;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #303a378c;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    box-sizing: border-box;
+    .section-title {
+        color: aliceblue;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: "Saira", sans-serif;
+      }
+    
+      .section-subtitle {
+        margin-top: 0%;
+        color: #c1c1c1;
+      }
+    .products-search-container{
+      height: 100%;
+      width: 100%;
+      input{
+        width: 50%;
+        height: 100%;
+        background: transparent;
+        color: aliceblue;
+        padding: 5px 5px;
+        margin-right: 10px;
+        transition: all ease-in-out 0.1s;
+        outline: none;
+        border: solid 2px transparent;
+        box-sizing: border-box;
+        background-color: #000000b7;
+      }
+      input:focus{
+        outline: none;
+        border: none;
+        border: solid 2px var(--primary-color);
+      }
+      button{
+        height: 100%;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 5px;
+        box-sizing: border-box;
+        border: none;
+        cursor: pointer;
+        padding: 0px 10px;
+        transition: all ease 0.1s;
+      }
+      button:hover{
+        background-color: var(--hoverBG);
+        box-shadow: 0px 0px 5px var(--shadowColor);
+      }
+      button:active{
+        transform: scale(0.9);
+      }
+    }
+  }
+  .products-grid{
+    overflow-x: hidden;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
 }
 .topSales-container {
   height: calc(100vh - 0px);
@@ -510,14 +490,15 @@ body {
         }
       }
       .home-off-grid {
+        margin-top: 10px;
         flex-direction: column;
         gap: 10px;
         justify-content: center;
         align-items: center;
-        .home-off-card {
+        /* .home-off-card {
           width: 100%;
           height: 100%;
-        }
+        } */
       }
     }
   }

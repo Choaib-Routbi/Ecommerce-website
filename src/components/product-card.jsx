@@ -1,7 +1,7 @@
 import React from "react";
 const ProductCard = () => {
   return (
-    <div className="home-off-card">
+    <div className="product-card">
       <div className="card-img">
         <div className="card-img-child"></div>
       </div>

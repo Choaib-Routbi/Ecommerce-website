@@ -103,12 +103,7 @@ function Navbar() {
           Copyright 2025 Fonticons, Inc
           <path d="M320 312C386.3 312 440 258.3 440 192C440 125.7 386.3 72 320 72C253.7 72 200 125.7 200 192C200 258.3 253.7 312 320 312zM290.3 368C191.8 368 112 447.8 112 546.3C112 562.7 125.3 576 141.7 576L498.3 576C514.7 576 528 562.7 528 546.3C528 447.8 448.2 368 349.7 368L290.3 368z" />
         </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-          Font Awesome Pro v7.1.0 by @fontawesome - https://fontawesome.com
-          License - https://fontawesome.com/license (Commercial License)
-          Copyright 2025 Fonticons, Inc.
-          <path d="M512 320C512 214 426 128 320 128L320 512C426 512 512 426 512 320zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320z" />
-        </svg>
+
       </div>
     </nav>
   );

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import ProductCard from "../components/product-card";
 
 const Home = () => {
-  const targetDate = new Date("2025-10-17T20:59:59"); // 🎯 your countdown target
+  const targetDate = new Date("2025-10-20T20:59:59"); // 🎯 your countdown target
 
   const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, data } from "react-router-dom";
 import "./index.css";
+
 import Home from './pages/home';
 import Collections from './pages/collections';
 import Products from './pages/products';
