@@ -4,17 +4,17 @@ import { useEffect } from "react";
 const ProductCard = () => {
 
 
-    useEffect(()=>{
-    fetch("https://my.api.mockaroo.com/tech_products_json.json?key=dc8d0e20")
-    .then(res => res.json())
-    .then(data =>{
-      console.log(data);
+  //   useEffect(()=>{
+  //   fetch("https://my.api.mockaroo.com/tech_products_json.json?key=dc8d0e20")
+  //   .then(res => res.json())
+  //   .then(data =>{
+  //     console.log(data);
       
-    })
-  },[])
+  //   })
+  // },[])
 
 
-  
+
   return (
     <div className="product-card">
       <div className="card-img">
