@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, data, NavLink } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  data,
+  NavLink,
+} from "react-router-dom";
 import ProductCard from "../components/product-card";
 
-import Collections from './collections';
-import Products from './products';
+import Collections from "./collections";
+import Products from "./products";
 
 const Home = () => {
   const targetDate = new Date("2025-10-20T20:59:59"); // 🎯 your countdown target
@@ -58,8 +64,12 @@ const Home = () => {
               <Route path="/products" element={<Products />} />
               <Route path="/collections" element={<Collections />} />
             </Routes>
-            <NavLink to={"/products"} className="shop">shop now</NavLink>
-            <NavLink to={"/collections"} className="discover">discover collections</NavLink>
+            <NavLink to={"/products"} className="shop">
+              shop now
+            </NavLink>
+            <NavLink to={"/collections"} className="discover">
+              discover collections
+            </NavLink>
             <div></div>
             <div></div>
           </div>
@@ -89,8 +99,7 @@ const Home = () => {
             </div>
           </div>
           <div className="home-off-grid">
-            <ProductCard 
-            />
+            <ProductCard />
             <ProductCard />
             <ProductCard />
           </div>

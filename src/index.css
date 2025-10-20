@@ -6,7 +6,7 @@
   --text-color: #1a1a1a;
   --main-background: #21283094;
 }
-a:-webkit-any-link{
+a:-webkit-any-link {
   text-decoration: none;
 }
 body {
@@ -92,7 +92,7 @@ body {
     height: 50px;
     margin-bottom: 20px;
     text-align: center;
-    a{
+    a {
       text-wrap: nowrap;
       height: fit-content;
     }
@@ -188,7 +188,6 @@ body {
       display: flex;
       gap: 20px;
       justify-content: center;
-      
     }
   }
 }
@@ -265,7 +264,7 @@ body {
 .nav-btn.active {
   color: var(--primary-color);
 }
-.collections-container::-webkit-scrollbar{
+.collections-container::-webkit-scrollbar {
   display: none;
 }
 .collections-container {
@@ -280,47 +279,47 @@ body {
   /* ------adjust-bg------- */
   color: aliceblue;
   box-sizing: border-box;
-  overflow-x: hidden ;
-  .section-title{
+  overflow-x: hidden;
+  .section-title {
     color: aliceblue;
     font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
     font-family: "Saira", sans-serif;
   }
-  .section-subtitle{
+  .section-subtitle {
     margin-top: 0%;
     color: #c1c1c1;
   }
-  .collections-grid-container{  
+  .collections-grid-container {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 10px;
     height: 70%;
     box-sizing: border-box;
-    .oneCollection{
+    .oneCollection {
       background-color: var(--main-background);
       border-radius: 10px;
       box-sizing: border-box;
       text-align: center;
-      height: 350px;  
+      height: 350px;
       padding: 10px;
       display: grid;
       text-align: center;
       align-content: center;
       justify-items: center;
-      .oneCollection-title{
+      .oneCollection-title {
         margin: 0%;
         font-size: 1rem;
         font-weight: 700;
         margin-top: 150px;
       }
-      .oneCollection-description{
+      .oneCollection-description {
         font-size: 0.8rem;
         width: 80%;
       }
-      button{
+      button {
         padding: 5px 20px;
         height: 30px;
         width: 170px;
@@ -332,17 +331,17 @@ body {
         margin-top: 25px;
         cursor: pointer;
       }
-      button:hover{
+      button:hover {
         background-color: var(--hoverBG);
         box-shadow: 0px 0px 15px var(--shadowColor);
       }
-      button:active{
-              transform: scale(0.9);
+      button:active {
+        transform: scale(0.9);
       }
     }
   }
 }
-.products-container::-webkit-scrollbar{
+.products-container::-webkit-scrollbar {
   display: none;
 }
 .products-container {
@@ -358,7 +357,7 @@ body {
   color: aliceblue;
   box-sizing: border-box;
   overflow-x: hidden;
-  .products-section-banner{
+  .products-section-banner {
     min-height: 20vh;
     max-height: 30vh;
     width: 100%;
@@ -372,21 +371,21 @@ body {
     justify-items: center;
     box-sizing: border-box;
     .section-title {
-        color: aliceblue;
-        font-size: 1.5rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-family: "Saira", sans-serif;
-      }
-    
-      .section-subtitle {
-        margin-top: 0%;
-        color: #c1c1c1;
-      }
-    .products-search-container{
+      color: aliceblue;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-family: "Saira", sans-serif;
+    }
+
+    .section-subtitle {
+      margin-top: 0%;
+      color: #c1c1c1;
+    }
+    .products-search-container {
       height: 100%;
       width: 100%;
-      input{
+      input {
         width: 50%;
         height: 100%;
         background: transparent;
@@ -399,12 +398,12 @@ body {
         box-sizing: border-box;
         background-color: #000000b7;
       }
-      input:focus{
+      input:focus {
         outline: none;
         border: none;
         border: solid 2px var(--primary-color);
       }
-      button{
+      button {
         height: 100%;
         background-color: var(--primary-color);
         color: white;
@@ -415,16 +414,16 @@ body {
         padding: 0px 10px;
         transition: all ease 0.1s;
       }
-      button:hover{
+      button:hover {
         background-color: var(--hoverBG);
         box-shadow: 0px 0px 5px var(--shadowColor);
       }
-      button:active{
+      button:active {
         transform: scale(0.9);
       }
     }
   }
-  .products-grid{
+  .products-grid {
     overflow-x: hidden;
     width: 100%;
     display: flex;
@@ -432,6 +431,9 @@ body {
     gap: 10px;
     justify-content: center;
   }
+}
+.topSales-container::-webkit-scrollbar {
+  display: none;
 }
 .topSales-container {
   height: calc(100vh - 0px);
@@ -441,11 +443,56 @@ body {
   border-radius: 10px;
   border: none;
   background-color: var(--main-background);
-  /* background: transparent; */
+  background: transparent;
   /* ------adjust-bg------- */
   color: aliceblue;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-x: hidden;
+  text-align: center;
+  .subsection {
+    display: grid;
+    grid-template-rows: repeat(2,auto);
+    align-content: space-evenly;
+    height: 500px;
+    width: 100%;
+    padding: 30px 100px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--main-background);
+    .title {
+      color: aliceblue;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-family: "Saira", sans-serif;
+    }
+    .subtitle {
+      margin-top: 0%;
+      color: #c1c1c1;
+    }
+    .subsection-cards{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      overflow-x: scroll;
+
+    }
+    .subsection-cards::-webkit-scrollbar{
+      height: 10px;
+      background-color: transparent;
+    }
+        .subsection-cards::-webkit-scrollbar-thumb{
+          background-color: var(--primary-color);
+          cursor: pointer;
+          border-radius: 10px;
+        }
+            
+
+  }
 }
 .about-container {
   height: calc(100vh - 0px);
@@ -532,12 +579,11 @@ body {
       }
     }
   }
-  .collections-container{
-
-    .collections-grid-container{
+  .collections-container {
+    .collections-grid-container {
       display: grid;
-      grid-template-columns: repeat(1, auto);  
+      grid-template-columns: repeat(1, auto);
       gap: 30px;
     }
-    }
+  }
 }

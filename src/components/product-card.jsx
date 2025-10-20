@@ -1,19 +1,26 @@
 import React from "react";
 import { useEffect } from "react";
 
-const ProductCard = ({brand, category, currency, id, model, model_code, name, price, rating, short_description}) => {
-
-
+const ProductCard = ({
+  brand,
+  category,
+  currency,
+  id,
+  model,
+  model_code,
+  name,
+  price,
+  rating,
+  short_description,
+}) => {
   //   useEffect(()=>{
   //   fetch("https://my.api.mockaroo.com/tech_products_json.json?key=dc8d0e20")
   //   .then(res => res.json())
   //   .then(data =>{
   //     console.log(data);
-      
+
   //   })
   // },[])
-
-
 
   return (
     <div className="product-card">
@@ -23,7 +30,9 @@ const ProductCard = ({brand, category, currency, id, model, model_code, name, pr
       <div className="card-infos">
         <div className="card-text">
           <div className="card-titles">
-            <div className="card-product-category">{category || "category"}</div>
+            <div className="card-product-category">
+              {category || "category"}
+            </div>
             <div className="card-product-name">{name || "product name"}</div>
           </div>
           <div className="card-price">{price || "price"}$</div>
