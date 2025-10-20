@@ -6,7 +6,9 @@
   --text-color: #1a1a1a;
   --main-background: #21283094;
 }
-
+a:-webkit-any-link{
+  text-decoration: none;
+}
 body {
   margin: 0;
   padding: 5px 20px;
@@ -86,19 +88,26 @@ body {
     display: grid;
     grid-template-columns: repeat(5, auto);
     column-gap: 20px;
-    width: 40%;
-    height: 45px;
+    width: 50%;
+    height: 50px;
     margin-bottom: 20px;
+    text-align: center;
+    a{
+      text-wrap: nowrap;
+      height: fit-content;
+    }
     .shop {
       background-color: var(--primary-color);
       border: none;
-      padding: 0px 50px;
+      padding: 10px 50px;
       border-radius: 5px;
       color: white;
-      font-weight: 600;
+      /* font-size: 1rem; */
+      font-weight: 800;
       cursor: pointer;
       transition: all 0.2s ease;
       grid-column: span 2;
+      text-transform: uppercase;
     }
     .shop:hover {
       background-color: var(--hoverBG);
@@ -112,11 +121,12 @@ body {
       border: solid 2px var(--primary-color);
       border-radius: 5px;
       color: aliceblue;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       transition: all 0.2s ease;
       grid-column: span 3;
-      padding: 0px 50px;
+      padding: 10px 50px;
+      text-transform: capitalize;
     }
     .discover:hover {
       background-color: #3f3c3c56;

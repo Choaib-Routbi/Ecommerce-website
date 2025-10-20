@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 
-const ProductCard = () => {
+const ProductCard = ({brand, category, currency, id, model, model_code, name, price, rating, short_description}) => {
 
 
   //   useEffect(()=>{
@@ -23,10 +23,10 @@ const ProductCard = () => {
       <div className="card-infos">
         <div className="card-text">
           <div className="card-titles">
-            <div className="card-product-category">headphone</div>
-            <div className="card-product-name">tech headphone X17</div>
+            <div className="card-product-category">{category || "category"}</div>
+            <div className="card-product-name">{name || "product name"}</div>
           </div>
-          <div className="card-price">20.15$</div>
+          <div className="card-price">{price || "price"}$</div>
         </div>
         <div className="card-btns">
           <button className="card-addtocartBtn">add to cart</button>
