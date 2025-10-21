@@ -41,6 +41,9 @@ const ProductCard = ({
             <div className="card-product-rating">
               {rating ? `rating : ${rating ?? ""}/5` : ""}
             </div>
+            <div className="card-product-createdAt">
+              {createdAt}
+            </div>
             <div className="card-product-name">
               {name == null ? "product name" : name}
             </div>

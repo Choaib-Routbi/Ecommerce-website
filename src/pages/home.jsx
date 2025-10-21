@@ -12,7 +12,7 @@ import Collections from "./collections";
 import Products from "./products";
 
 const Home = () => {
-  const targetDate = new Date("2025-10-20T20:59:59"); // 🎯 your countdown target
+  const targetDate = new Date("2025-11-20T20:59:59"); // 🎯 your countdown target
 
   const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
 
@@ -99,9 +99,9 @@ const Home = () => {
             </div>
           </div>
           <div className="home-off-grid">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            <ProductCard name={"test"} sales={2222} rating={"4"} category={"a devies"} price={111}/>
+            <ProductCard name={"test"} sales={2222} rating={"4"} category={"a devies"} price={111}/>
+            <ProductCard name={"test"} sales={2222} rating={"4"} category={"a devies"} price={111}/>
           </div>
         </div>
       </div>

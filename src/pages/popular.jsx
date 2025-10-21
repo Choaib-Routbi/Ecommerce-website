@@ -5,7 +5,8 @@ import Products from "./products";
 const Popular = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://my.api.mockaroo.com/tech_products_json.json?key=dc8d0e20")
+    // fetch("https://my.api.mockaroo.com/tech_products_json.json?key=dc8d0e20")
+    fetch("https://mocki.io/v1/66888687-f718-43b2-b972-9968ca500fb5")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -66,26 +67,25 @@ const Popular = () => {
             </p>
           </div>
           <div className="subsection-cards">
-            {products
-              .filter((product) => {
-                const createdAt = new Date(product.createdAt);
-                const now = new Date();
-                const diffInMs = now - createdAt;
-                const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
-                return diffInDays
-              })
-              .map((product) => (
-                diffInDays <= 10   ?
-                <ProductCard
-                  key={product.id}
-                  createdAt={product.createdAt}
-                  category={product.category}
-                  rating={product.rating}
-                  name={product.name}
-                  price={product.price}
-                /> : <div>!!!!!!!</div>
-              ))}
-          </div>
+           {products
+            .filter((product) => {
+              const createdAt = new Date(product.createdAT);
+              const now = new Date();
+              const diffInMs = now - createdAt;
+              const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+              return diffInDays <= 2; // only show products created in last 2 days
+            })
+          .map((product) => (
+            <ProductCard
+              key={product.id}
+              createdAt={"just now"}
+              category={product.category}
+              name={product.name}
+              price={product.price}
+              />
+               ))}
+        </div>
+
         </div>
       </div>
     </div>

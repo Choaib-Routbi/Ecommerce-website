@@ -5,7 +5,8 @@ const Products = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://my.api.mockaroo.com/tech_products_json.json?key=dc8d0e20")
+    // fetch("https://my.api.mockaroo.com/tech_products_json.json?key=dc8d0e20")
+    fetch("https://mocki.io/v1/66888687-f718-43b2-b972-9968ca500fb5")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
