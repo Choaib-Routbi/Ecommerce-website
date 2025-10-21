@@ -8,6 +8,7 @@ const Products = () => {
     fetch("https://my.api.mockaroo.com/tech_products_json.json?key=dc8d0e20")
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setProducts(data);
       });
   }, []);

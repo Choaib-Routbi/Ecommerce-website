@@ -12,6 +12,8 @@ const ProductCard = ({
   price,
   rating,
   short_description,
+  createdAt,
+  sales,
 }) => {
   //   useEffect(()=>{
   //   fetch("https://my.api.mockaroo.com/tech_products_json.json?key=dc8d0e20")
@@ -33,7 +35,15 @@ const ProductCard = ({
             <div className="card-product-category">
               {category || "category"}
             </div>
-            <div className="card-product-name">{name || "product name"}</div>
+            <div className="card-product-sales">
+              {sales ? `sales : ${sales ?? ""}` : ""}
+            </div>
+            <div className="card-product-rating">
+              {rating ? `rating : ${rating ?? ""}/5` : ""}
+            </div>
+            <div className="card-product-name">
+              {name == null ? "product name" : name}
+            </div>
           </div>
           <div className="card-price">{price || "price"}$</div>
         </div>
