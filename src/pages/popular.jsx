@@ -6,7 +6,7 @@ const Popular = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     // fetch("https://my.api.mockaroo.com/tech_products_json.json?key=dc8d0e20")
-    fetch("https://mocki.io/v1/66888687-f718-43b2-b972-9968ca500fb5")
+    fetch("https://mocki.io/v1/2cd5b203-313b-4e19-9caf-b69cfcfef61f")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -78,7 +78,7 @@ const Popular = () => {
           .map((product) => (
             <ProductCard
               key={product.id}
-              createdAt={"just now"}
+              createdAt={" - just now"}
               category={product.category}
               name={product.name}
               price={product.price}

@@ -26,7 +26,7 @@ const ProductCard = ({
         <div className="card-text">
           <div className="card-titles">
             <div className="card-product-category">
-              {category || "category"}
+              {category + " " + `${createdAt ?? ""}` || "category"}
             </div>
             <div className="card-product-sales">
               {sales ? `sales : ${sales ?? ""}` : ""}
@@ -34,9 +34,9 @@ const ProductCard = ({
             <div className="card-product-rating">
               {rating ? `rating : ${rating ?? ""}/5` : ""}
             </div>
-            <div className="card-product-createdAt">
-              {createdAt}
-            </div>
+            {/* <div className="card-product-createdAt">
+              {createdAt} 
+            </div> */}
             <div className="card-product-name">
               {name == null ? "product name" : name}
             </div>
