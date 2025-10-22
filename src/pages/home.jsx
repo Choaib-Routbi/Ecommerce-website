@@ -99,9 +99,27 @@ const Home = () => {
             </div>
           </div>
           <div className="home-off-grid">
-            <ProductCard name={"test"} sales={2222} rating={"4"} category={"a devies"} price={111}/>
-            <ProductCard name={"test"} sales={2222} rating={"4"} category={"a devies"} price={111}/>
-            <ProductCard name={"test"} sales={2222} rating={"4"} category={"a devies"} price={111}/>
+            <ProductCard
+              name={"test"}
+              sales={2222}
+              rating={"4"}
+              category={"a devies"}
+              price={111}
+            />
+            <ProductCard
+              name={"test"}
+              sales={2222}
+              rating={"4"}
+              category={"a devies"}
+              price={111}
+            />
+            <ProductCard
+              name={"test"}
+              sales={2222}
+              rating={"4"}
+              category={"a devies"}
+              price={111}
+            />
           </div>
         </div>
       </div>

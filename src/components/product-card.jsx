@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 
 const ProductCard = ({
@@ -15,7 +15,10 @@ const ProductCard = ({
   createdAt,
   sales,
 }) => {
-
+  const [inCart, setInCart] = useState(false);
+  const cardBtnClicked = () => {
+    setInCart((prev) => !prev);
+  };
 
   return (
     <div className="product-card">
@@ -25,14 +28,19 @@ const ProductCard = ({
       <div className="card-infos">
         <div className="card-text">
           <div className="card-titles">
-            <div className="card-product-category">
-              {category + " " + `${createdAt ?? ""}` || "category"}
-            </div>
-            <div className="card-product-sales">
-              {sales ? `sales : ${sales ?? ""}` : ""}
-            </div>
-            <div className="card-product-rating">
-              {rating ? `rating : ${rating ?? ""}/5` : ""}
+            <div className="card-property">
+              <div className="card-product-category card-property">
+                {category + " " + `${createdAt ?? ""}` || "category"}
+              </div>
+              <div className="card-product-sales card-property">
+                {sales ? `sales : ${sales ?? ""}` : ""}
+              </div>
+              <div className="card-product-rating card-property">
+                {rating ? "rating :" : ""}
+                <span className="card-product-rating-star">
+                  {rating ? ` ${rating ?? ""} ` : ""}
+                </span>
+              </div>
             </div>
             {/* <div className="card-product-createdAt">
               {createdAt} 
@@ -44,7 +52,14 @@ const ProductCard = ({
           <div className="card-price">{price || "price"}$</div>
         </div>
         <div className="card-btns">
-          <button className="card-addtocartBtn">add to cart</button>
+          <button
+            onClick={cardBtnClicked}
+            className={
+              inCart ? "card-addtocartBtn-inCART" : "card-addtocartBtn"
+            }
+          >
+            add to cart
+          </button>
           <svg
             className="card-likeBtn"
             xmlns="http://www.w3.org/2000/svg"

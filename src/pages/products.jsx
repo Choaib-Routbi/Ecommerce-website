@@ -5,10 +5,9 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [input, setInput] = useState("");
 
-
   useEffect(() => {
     // fetch("https://my.api.mockaroo.com/tech_products_json.json?key=dc8d0e20")
-    fetch("https://mocki.io/v1/2cd5b203-313b-4e19-9caf-b69cfcfef61f ")
+    fetch("https://mocki.io/v1/d82301eb-3c05-40dc-8c03-04af494527c8")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -18,7 +17,7 @@ const Products = () => {
 
   const filtredProducts = products.filter((product) =>
     product.name?.toLowerCase().includes(input.toLowerCase())
-  )
+  );
 
   return (
     <div className="section products">
@@ -41,16 +40,16 @@ const Products = () => {
           </div>
         </div>
         <div className="products-grid">
-          {
-            filtredProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                name={product.name}
-                category={product.category}
-                price={product.price}
-              />
-            ))
-          }
+          {filtredProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              category={product.category}
+              sales={product.sales}
+              rating={product.rating}
+              name={product.name}
+              price={product.price}
+            />
+          ))}
         </div>
       </div>
     </div>

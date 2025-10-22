@@ -6,7 +6,7 @@ const Popular = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     // fetch("https://my.api.mockaroo.com/tech_products_json.json?key=dc8d0e20")
-    fetch("https://mocki.io/v1/2cd5b203-313b-4e19-9caf-b69cfcfef61f")
+    fetch("https://mocki.io/v1/d82301eb-3c05-40dc-8c03-04af494527c8")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -28,10 +28,11 @@ const Popular = () => {
             {products.map((product) =>
               product.sales >= 1800 ? (
                 <ProductCard
+                  key={product.id}
                   category={product.category}
                   sales={product.sales}
+                  rating={product.rating}
                   name={product.name || ""}
-                  key={product.id}
                   price={product.price}
                 />
               ) : null
@@ -47,11 +48,12 @@ const Popular = () => {
           </div>
           <div className="subsection-cards">
             {products.map((product) =>
-              product.rating >= 4.5 ? (
+              product.rating == "★★★★☆" || product.rating == "★★★★★" ? (
                 <ProductCard
-                  category={product.category}
-                  rating={product.rating}
                   key={product.id}
+                  category={product.category}
+                  sales={product.sales}
+                  rating={product.rating}
                   name={product.name}
                   price={product.price}
                 />
@@ -67,25 +69,27 @@ const Popular = () => {
             </p>
           </div>
           <div className="subsection-cards">
-           {products
-            .filter((product) => {
-              const createdAt = new Date(product.createdAT);
-              const now = new Date();
-              const diffInMs = now - createdAt;
-              const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
-              return diffInDays <= 2; // only show products created in last 2 days
-            })
-          .map((product) => (
-            <ProductCard
-              key={product.id}
-              createdAt={" - just now"}
-              category={product.category}
-              name={product.name}
-              price={product.price}
-              />
-               ))}
-        </div>
-
+            {products
+              .filter((product) => {
+                const createdAt = new Date(product.createdAT);
+                const now = new Date();
+                const diffInMs = now - createdAt;
+                const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+                return diffInDays <= 2; // created in last 2 days
+              })
+              .map((product) =>
+                product.sales <= 100 ? (
+                  <ProductCard
+                    key={product.id}
+                    category={product.category}
+                    createdAt={" - just now"}
+                    sales={product.sales}
+                    name={product.name}
+                    price={product.price}
+                  />
+                ) : null
+              )}
+          </div>
         </div>
       </div>
     </div>
