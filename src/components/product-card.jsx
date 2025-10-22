@@ -13,9 +13,15 @@ const ProductCard = ({
   rating,
   short_description,
   createdAt,
-  sales,
+  sales
 }) => {
+  
   const [inCart, setInCart] = useState(false);
+  const inCartTRUE = "in cart"
+  const inCartTRUE_class = "card-addtocartBtn-inCART"
+  const inCartFALSE = "add to cart"
+  const inCartFALSE_class = "card-addtocartBtn"
+
   const cardBtnClicked = () => {
     setInCart((prev) => !prev);
   };
@@ -55,10 +61,12 @@ const ProductCard = ({
           <button
             onClick={cardBtnClicked}
             className={
-              inCart ? "card-addtocartBtn-inCART" : "card-addtocartBtn"
+              inCart ? inCartTRUE_class : inCartFALSE_class
             }
           >
-            add to cart
+            {
+              inCart ? inCartTRUE : inCartFALSE
+            }
           </button>
           <svg
             className="card-likeBtn"

@@ -105,9 +105,6 @@
       .card-addtocartBtn:active {
         transform: scale(0.9);
       }
-      .card-addtocartBtn:focus {
-        background-color: #4c5b6b;
-      }
       .card-addtocartBtn-inCART {
         background-color: #4c5b6b;
         box-sizing: border-box;
@@ -121,6 +118,10 @@
         height: 25px;
         cursor: pointer;
         transition: all ease 0.2s;
+        content: "in cart";
+      }
+      .card-addtocartBtn-inCART:hover{
+        background-color: #58697a;
       }
       svg {
         box-sizing: border-box;
