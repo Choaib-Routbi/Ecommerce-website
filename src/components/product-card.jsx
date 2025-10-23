@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState ,useContext } from "react";
+import { countContext } from "../cartContext";
 import { useEffect } from "react";
 
 const ProductCard = ({
@@ -15,6 +16,7 @@ const ProductCard = ({
   createdAt,
   sales
 }) => {
+  const {upCount , downCount} = useContext(countContext)
   
   const [inCart, setInCart] = useState(false);
   const inCartTRUE = "in cart"
@@ -24,6 +26,7 @@ const ProductCard = ({
 
   const cardBtnClicked = () => {
     setInCart((prev) => !prev);
+    inCart ? downCount() : upCount()
   };
 
   return (

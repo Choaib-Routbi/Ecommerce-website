@@ -26,7 +26,7 @@ const Popular = () => {
           </div>
           <div className="subsection-cards">
             {products.map((product) =>
-              product.sales >= 1800 ? (
+              product.sales >= 1800 && product.rating == "★★★★☆" || product.rating == "★★★★★" ? (
                 <ProductCard
                   key={product.id}
                   category={product.category}

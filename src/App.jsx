@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect , useContext } from "react";
+import { CartCountProvider } from "./cartContext";
 import { BrowserRouter as Router, Routes, Route, data } from "react-router-dom";
 import "./index.css";
 
@@ -11,6 +12,7 @@ import Navbar from "./components/navbar";
 
 function App() {
   return (
+    <CartCountProvider>
     <div className="app-container">
       <Navbar />
       <Routes>
@@ -21,6 +23,7 @@ function App() {
         <Route path="/about" element={<About />} />
       </Routes>
     </div>
+    </CartCountProvider>
   );
 }
 
