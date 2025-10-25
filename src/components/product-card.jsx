@@ -1,4 +1,4 @@
-import React, { useState ,useContext } from "react";
+import React, { useState, useContext } from "react";
 import { countContext } from "../cartContext";
 import { useEffect } from "react";
 
@@ -14,19 +14,19 @@ const ProductCard = ({
   rating,
   short_description,
   createdAt,
-  sales
+  sales,
 }) => {
-  const {upCount , downCount} = useContext(countContext)
-  
+  const { upCount, downCount } = useContext(countContext);
+
   const [inCart, setInCart] = useState(false);
-  const inCartTRUE = "in cart"
-  const inCartTRUE_class = "card-addtocartBtn-inCART"
-  const inCartFALSE = "add to cart"
-  const inCartFALSE_class = "card-addtocartBtn"
+  const inCartTRUE = "in cart";
+  const inCartTRUE_class = "card-addtocartBtn-inCART";
+  const inCartFALSE = "add to cart";
+  const inCartFALSE_class = "card-addtocartBtn";
 
   const cardBtnClicked = () => {
     setInCart((prev) => !prev);
-    inCart ? downCount() : upCount()
+    inCart ? downCount() : upCount();
   };
 
   return (
@@ -63,13 +63,9 @@ const ProductCard = ({
         <div className="card-btns">
           <button
             onClick={cardBtnClicked}
-            className={
-              inCart ? inCartTRUE_class : inCartFALSE_class
-            }
+            className={inCart ? inCartTRUE_class : inCartFALSE_class}
           >
-            {
-              inCart ? inCartTRUE : inCartFALSE
-            }
+            {inCart ? inCartTRUE : inCartFALSE}
           </button>
           <svg
             className="card-likeBtn"

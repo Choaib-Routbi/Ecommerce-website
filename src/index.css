@@ -245,10 +245,10 @@ body {
       color: var(--primary-color);
     }
   }
-  .incart_Counter{
+  .incart_Counter {
     font-size: 0.7rem;
     transform: translate(15px, -5px);
-    background-color:  var(--primary-color);
+    background-color: var(--primary-color);
     padding: 2px 4px;
     text-align: center;
     border-radius: 15px;
@@ -500,11 +500,11 @@ body {
       border-radius: 10px;
     }
   }
-  .TopRated-container{
+  .TopRated-container {
     height: fit-content;
     padding: 50px 20px;
     box-sizing: border-box;
-    .subsection-cards{
+    .subsection-cards {
       overflow-x: hidden;
       width: 100%;
       display: flex;
@@ -513,34 +513,54 @@ body {
       justify-content: center;
       padding: 30px 0px;
       box-sizing: border-box;
-      .product-card{
+      .product-card {
         transition: all ease 0.3s;
         width: 250px;
-     }
-      .product-card:hover{
+      }
+      .product-card:hover {
         box-shadow: 0px 0px 10px var(--shadowColor);
       }
     }
   }
-  .BestSellers-container{
-    .subsection-cards::-webkit-scrollbar{ 
+  .BestSellers-container {
+    padding: 30px 50px;
+    .subsection-carousel-container {
+      display: grid;
+      grid-template-columns: repeat(3,auto);
+      align-items:center ;
+      column-gap: 50px;
+      
+    .subsection-cards::-webkit-scrollbar {
       height: 20px;
+        
     }
-    .subsection-cards::-webkit-scrollbar-button{
-      background-color: #00be85;
-      width: 11px;
+    .arrow{
+      height: 20px;
+      fill: aliceblue;
       cursor: pointer;
-        background: transparent;
-        border: #00be85 5px solid;
+      padding: 5px;
+      border-radius: 50%;
+      transition: all ease 0.2s;
     }
-    .subsection-cards::-webkit-scrollbar-thumb{
+    .arrow:hover{
+      background-color: #323646;
+      fill: var(--primary-color);
+    }
+    .arrow:active{
+      transform: scale(0.9);
+    }
+    .subsection-cards::-webkit-scrollbar-button {
+      display: none;
+    }
+    .subsection-cards::-webkit-scrollbar-thumb {
       background-color: red;
       display: none;
     }
   }
+  }
 }
 .about-container {
-  height: calc(100vh - 0px);
+  height: calc(100vh - 80px);
   border: solid 1px #3f3c3c;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -631,9 +651,14 @@ body {
       gap: 30px;
     }
   }
-    .topSales-container{
-      .subsection{
-        padding: 30px 30px;
+  .topSales-container {
+    .subsection {
+      padding: 30px 30px;
+    }
+    .BestSellers-container{
+      .subsection-carousel-container{
+        column-gap: 10px;
       }
     }
+  }
 }
