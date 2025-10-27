@@ -30,7 +30,7 @@ function Navbar() {
   
   return (
     <nav className="navbar">
-      <div className="logo">logo</div>
+      <div className="logo">GGStation</div>
       <div className="nav-btns-container">
         {navtoggleARG ? (
           <>
