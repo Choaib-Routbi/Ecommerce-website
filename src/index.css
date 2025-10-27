@@ -193,7 +193,6 @@ body {
       justify-content: center;
       .product-card {
         animation: HomeCardAnimation 2s infinite ease;
-        box-shadow: 0px 0px 10px var(--primary-color);
       }
     }
   }
@@ -325,26 +324,31 @@ body {
       text-align: center;
       align-content: center;
       justify-items: center;
+      svg{
+        height: 50px;
+        width: 50px;
+        fill: var(--primary-color);
+      }
       .oneCollection-title {
         margin: 0%;
         font-size: 1rem;
         font-weight: 700;
-        margin-top: 150px;
+        margin-top: 15px ;
       }
       .oneCollection-description {
         font-size: 0.8rem;
         width: 80%;
       }
       button {
-        padding: 5px 20px;
+        padding: 5px 0px;
         height: 30px;
-        width: 170px;
+        width: 150px;
         background-color: var(--hoverBG);
         border: none;
         outline: none;
         transition: all ease-in-out 0.2s;
         border-radius: 5px;
-        margin-top: 25px;
+        margin-top: 15px;
         cursor: pointer;
       }
       button:hover {
@@ -600,6 +604,7 @@ body {
     p {
       font-family: "Inter", sans-serif;
       margin-bottom: 100px;
+      font-size: clamp(0.8rem, 1.3vw, 1.3rem);
       word-spacing: 2px;
       line-height: 22px;
     }
@@ -645,7 +650,7 @@ body {
       .home-off-grid {
         margin-top: 10px;
         flex-direction: column;
-        gap: 10px;
+        gap: 30px;
         justify-content: center;
         align-items: center;
       }
