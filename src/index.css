@@ -572,7 +572,7 @@ body {
   }
 }
 .about-container {
-  height: fit-content;
+  height: calc(100vh - 70px);
   border: solid 1px #3f3c3c;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -603,16 +603,79 @@ body {
     }
     p {
       font-family: "Inter", sans-serif;
-      margin-bottom: 100px;
+      margin-bottom: 70px;
       font-size: clamp(0.8rem, 1.3vw, 1.3rem);
       word-spacing: 2px;
       line-height: 22px;
     }
   }
 }
-.nav-toggle {
-  display: none;
-}
+.account-container {
+  height: calc(100vh - 70px);
+  border: solid 1px #3f3c3c;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--main-background);
+  background: transparent;
+  /* ------adjust-bg------- */
+  color: aliceblue;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  overflow-x: hidden;
+
+  .account-container-content {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: var(--main-background);
+    /* background: transparent; */
+
+    .section-title {
+      margin: 0px;
+      color: aliceblue;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-family: "Saira", sans-serif;
+    }}}
+.cart-container {
+  height: calc(100vh - 70px);
+  border: solid 1px #3f3c3c;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--main-background);
+  background: transparent;
+  /* ------adjust-bg------- */
+  color: aliceblue;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  overflow-x: hidden;
+
+  .cart-container-content {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: var(--main-background);
+    /* background: transparent; */
+
+    .section-title {
+      margin: 0px;
+      color: aliceblue;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-family: "Saira", sans-serif;
+    }}}
 @media (max-width: 700px) {
   .home-container {
     h1 {
