@@ -167,6 +167,8 @@ body {
           font-weight: 700;
           font-family: "Shadows Into Light Two", cursive;
           letter-spacing: 2px;
+
+          animation: HomeOffreAnimation 2s infinite ease;
         }
       }
       .home-off-subtitle {
@@ -189,6 +191,10 @@ body {
       display: flex;
       gap: 20px;
       justify-content: center;
+      .product-card {
+        animation: HomeCardAnimation 2s infinite ease;
+        box-shadow: 0px 0px 10px var(--primary-color);
+      }
     }
   }
 }
@@ -524,46 +530,45 @@ body {
   }
   .BestSellers-container {
     padding: 30px 50px;
-    .carousel-swip-msg{
+    .carousel-swip-msg {
       display: none;
     }
     .subsection-carousel-container {
       display: grid;
-      grid-template-columns: repeat(3,auto);
-      align-items:center ;
+      grid-template-columns: repeat(3, auto);
+      align-items: center;
       column-gap: 50px;
-      
-    .subsection-cards::-webkit-scrollbar {
-      height: 20px;
-        
+
+      .subsection-cards::-webkit-scrollbar {
+        height: 20px;
+      }
+      .arrow {
+        height: 20px;
+        fill: aliceblue;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 50%;
+        transition: all ease 0.2s;
+      }
+      .arrow:hover {
+        background-color: #323646;
+        fill: var(--primary-color);
+      }
+      .arrow:active {
+        transform: scale(0.9);
+      }
+      .subsection-cards::-webkit-scrollbar-button {
+        display: none;
+      }
+      .subsection-cards::-webkit-scrollbar-thumb {
+        background-color: red;
+        display: none;
+      }
     }
-    .arrow{
-      height: 20px;
-      fill: aliceblue;
-      cursor: pointer;
-      padding: 5px;
-      border-radius: 50%;
-      transition: all ease 0.2s;
-    }
-    .arrow:hover{
-      background-color: #323646;
-      fill: var(--primary-color);
-    }
-    .arrow:active{
-      transform: scale(0.9);
-    }
-    .subsection-cards::-webkit-scrollbar-button {
-      display: none;
-    }
-    .subsection-cards::-webkit-scrollbar-thumb {
-      background-color: red;
-      display: none;
-    }
-  }
   }
 }
 .about-container {
-  height: calc(100vh - 100px);
+  height: fit-content;
   border: solid 1px #3f3c3c;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -578,24 +583,26 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
   text-align: center;
-  .about-container-content{
+  .about-container-content {
     width: 100%;
     height: 100%;
     padding: 30px;
-  border-radius: 10px;
+    border-radius: 10px;
     box-sizing: border-box;
-  background-color: var(--main-background);
-  .section-title{
-    color: aliceblue;
+    background-color: var(--main-background);
+    .section-title {
+      color: aliceblue;
       font-size: 1.5rem;
       font-weight: 700;
       text-transform: uppercase;
       font-family: "Saira", sans-serif;
-  }
-  p{
-    font-family: "Inter", sans-serif;
-    margin-bottom: 100px ;
-  }
+    }
+    p {
+      font-family: "Inter", sans-serif;
+      margin-bottom: 100px;
+      word-spacing: 2px;
+      line-height: 22px;
+    }
   }
 }
 .nav-toggle {
@@ -669,8 +676,8 @@ body {
       display: grid;
       grid-template-columns: repeat(1, auto);
       gap: 30px;
-      .oneCollection{
-        .oneCollection-title{
+      .oneCollection {
+        .oneCollection-title {
           margin-top: 20px;
         }
       }
@@ -680,29 +687,53 @@ body {
     .subsection {
       padding: 30px 30px;
     }
-    .BestSellers-container{
-      .subsection-carousel-container{
+    .BestSellers-container {
+      .subsection-carousel-container {
         column-gap: 10px;
       }
-      .carousel-swip-msg{
+      .carousel-swip-msg {
         display: block;
         font-size: 0.7rem;
-          color: #c1c1c1;
-          margin-top: 0%;
-          font-family: "Saira", sans-serif;
+        color: #c1c1c1;
+        margin-top: 0%;
+        font-family: "Saira", sans-serif;
       }
     }
   }
-    .topSales-container {
-      .BestSellers-container {
-                grid-template-rows: repeat(3, auto);
-        .subsection-carousel-container {
-          .arrow{
-            display: none;
-          }
+  .topSales-container {
+    .BestSellers-container {
+      grid-template-rows: repeat(3, auto);
+      .subsection-carousel-container {
+        .arrow {
+          display: none;
         }
       }
-
-
+    }
+  }
 }
+@keyframes HomeCardAnimation {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.01);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes HomeOffreAnimation {
+  0% {
+      text-shadow: 5px 5px 5px 5px var(--shadowColor);
+  }
+
+  50% {
+          text-shadow: 0px 0px 15px var(--shadowColor);
+  }
+
+  100% {
+      text-shadow: 5px 5px 5px 5px var(--shadowColor);
+  }
 }
