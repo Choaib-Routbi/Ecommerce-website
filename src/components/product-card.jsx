@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { countContext } from "../cartContext";
+import { cartContext } from "../cartContext";
 import { useEffect } from "react";
 
 const ProductCard = ({
@@ -16,17 +16,24 @@ const ProductCard = ({
   createdAt,
   sales,
 }) => {
-  const { upCount, downCount } = useContext(countContext);
-
+  
   const [inCart, setInCart] = useState(false);
   const inCartTRUE = "in cart";
   const inCartTRUE_class = "card-addtocartBtn-inCART";
   const inCartFALSE = "add to cart";
   const inCartFALSE_class = "card-addtocartBtn";
-
-  const cardBtnClicked = () => {
+  
+  const { upCount, downCount , addToCart , removeFromCart} = useContext(cartContext);
+  const cardBtnClicked = (product) => {
     setInCart((prev) => !prev);
-    inCart ? downCount() : upCount();
+    if (!inCart) {
+      upCount();
+    addToCart(product);
+  } else {
+    downCount();
+    removeFromCart(product.id);
+  }
+    // inCart ? downCount() + removeFromCart() : upCount() + addToCart();
   };
 
   return (

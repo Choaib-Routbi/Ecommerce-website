@@ -1,16 +1,14 @@
 import React from "react";
 
 const Account = () => {
-
-    return(
-        <div className="section account">
-            <div className="account-container">
-            <div className="account-container-content">
-
-                <p className="section-title">account</p>
-            </div>
-            </div>
+  return (
+    <div className="section account">
+      <div className="account-container">
+        <div className="account-container-content">
+          <p className="section-title">account</p>
         </div>
-    )
-}
-export default Account
+      </div>
+    </div>
+  );
+};
+export default Account;
