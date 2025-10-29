@@ -1,39 +1,46 @@
-import React , {useState ,useEffect , useContext, createContext} from "react";
+import React, { useState, useEffect, useContext, createContext } from "react";
 
 export const cartContext = createContext();
 
-export function CartCountProvider({children}){
+export function CartCountProvider({ children }) {
+    const [incartItems, setIncartItems] = useState(() => {
+      const saved = localStorage.getItem("incartItems");
+      return saved ? JSON.parse(saved) : [];
+    });
+  const incartCount = incartItems.length;
 
-    const [incartCount, setIncartCount] = useState(0)
-    const [incartItems, setIncartItems] = useState([])
-    const upCount = () => {
-        setIncartCount(prev => prev + 1)
-    }
-    const downCount = () => {
-        setIncartCount(prev => Math.max(prev - 1 , 0))
-    }
-    const addToCart = (product) => {
+//   localStorage.clear()
+
+  useEffect(() => {
+    localStorage.setItem("incartItems", JSON.stringify(incartItems));
+  }, [incartItems]);
+
+  
+
+  const addToCart = (product) => {
+      setIncartItems((prev) => {
+          const exists = prev.find((item) => item.name === product.name);
+          if (exists) return prev; // already added
+          return [...prev, product];
+        });
         console.log("added");
-        
-        setIncartItems((prev) => {
-            return [...prev,product]
-            // const existing = prev.find((item) => item.id === product.id)
-            // if(!existing){
-            //     return [...prev,product]
-            // }else{
-            //     console.log("already in cart");
-                
-            // }
-        }) 
-    }
-    const removeFromCart = (productID) => {
-        console.log("removed");
-        setIncartItems((prev) => prev.filter((item) => item.id !== productID))
-    }
-    const contextValue = {incartCount , incartItems , upCount , downCount , addToCart , removeFromCart}
-    return(
-    <cartContext.Provider value={contextValue}>
-        {children}
-    </cartContext.Provider>
-)
+  };
+
+  const removeFromCart = (productID) => {
+      setIncartItems((prev) => prev.filter((item) => item.name !== productID));
+      console.log("removed");
+  };
+  const isInCart = (name) => {
+        return incartItems.some((item) => item.name === name);
+    };
+      const contextValue = {
+          incartCount,
+          incartItems,
+          addToCart,
+          removeFromCart,
+          isInCart,
+        };
+  return (
+    <cartContext.Provider value={contextValue}>{children}</cartContext.Provider>
+  );
 }

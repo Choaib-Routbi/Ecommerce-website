@@ -16,24 +16,34 @@ const ProductCard = ({
   createdAt,
   sales,
 }) => {
-  
-  const [inCart, setInCart] = useState(false);
   const inCartTRUE = "in cart";
   const inCartTRUE_class = "card-addtocartBtn-inCART";
   const inCartFALSE = "add to cart";
   const inCartFALSE_class = "card-addtocartBtn";
-  
-  const { upCount, downCount , addToCart , removeFromCart} = useContext(cartContext);
-  const cardBtnClicked = (product) => {
-    setInCart((prev) => !prev);
-    if (!inCart) {
-      upCount();
-    addToCart(product);
-  } else {
-    downCount();
-    removeFromCart(product.id);
-  }
-    // inCart ? downCount() + removeFromCart() : upCount() + addToCart();
+  const {updateCount, addToCart, removeFromCart, isInCart } = useContext(cartContext);
+
+  const product = {
+    id,
+    brand,
+    category,
+    currency,
+    model,
+    model_code,
+    name,
+    price,
+    rating,
+    short_description,
+    createdAt,
+    sales,
+  };
+  const inCart = isInCart(product.name);
+
+  const addToCartFunction = () => {
+    if (inCart) {
+      removeFromCart(product.name);
+    } else {
+      addToCart(product);
+    }
   };
 
   return (
@@ -69,7 +79,7 @@ const ProductCard = ({
         </div>
         <div className="card-btns">
           <button
-            onClick={cardBtnClicked}
+            onClick={addToCartFunction}
             className={inCart ? inCartTRUE_class : inCartFALSE_class}
           >
             {inCart ? inCartTRUE : inCartFALSE}
