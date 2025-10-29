@@ -100,25 +100,25 @@ const Home = () => {
           </div>
           <div className="home-off-grid">
             <ProductCard
-              name={"test"}
-              sales={2222}
+              name={"test1"}
+              sales={2432}
               rating={"4"}
               category={"a devies"}
-              price={111}
+              price={91}
             />
             <ProductCard
-              name={"test"}
+              name={"test2"}
               sales={2222}
-              rating={"4"}
+              rating={"5"}
               category={"a devies"}
-              price={111}
+              price={34}
             />
             <ProductCard
-              name={"test"}
-              sales={2222}
-              rating={"4"}
+              name={"test3"}
+              sales={1255}
+              rating={"3"}
               category={"a devies"}
-              price={111}
+              price={10}
             />
           </div>
         </div>

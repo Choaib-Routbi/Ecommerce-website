@@ -537,6 +537,7 @@ body {
   }
   .BestSellers-container {
     padding: 30px 50px;
+    margin-top: 0px;
     .carousel-swip-msg {
       display: none;
     }
@@ -694,15 +695,14 @@ body {
     }
     .inCart-container{
       display: grid;
+      justify-items: center;
       /* grid-template-rows: repeat(2, auto); */
       width: 100%;
       height: calc(100% - 40px);
-      margin-bottom: 50px;
       border-radius: 15px;
       box-sizing: border-box;
     }
     .inCart-cards-container::-webkit-scrollbar{
-      background-color: var(--background-color);
       width: 8px;
     }
     .inCart-cards-container::-webkit-scrollbar-thumb{
@@ -711,23 +711,50 @@ body {
     }
     .inCart-cards-container{
       background-color: rgb(24, 11, 11);
+      background-color: transparent;
       border-radius: 15px;
       box-sizing: border-box;
       height: 500px;
       text-align: center;
-      display: grid;
-      justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content:center;
       gap: 10px;
       overflow-y: scroll;
       padding: 10px;
-
+      /* width: 85%;    */
+      p{
+        margin: auto;
+      }
+      .product-card{
+        background-color: #1a2033;
+        height: fit-content;
+        min-width: 400px;
+        max-width:400px;
+        display: grid;
+        grid-template-columns: repeat(2,auto);
+        column-gap: 10px;
+        .card-infos{
+          height: 100%;
+          width: 100%;
+          align-content: space-around
+        }
+        .card-img {
+          height: 100%;
+          aspect-ratio: 1 / 1;
+          grid-row: span 1;
+          overflow: hidden;
+          height: 120px;
+        }
+      }
     }
     .inCart-text-container{
       display: grid;
       grid-template-columns: repeat(2,1fr);
-      height: fit-content;
+      height: 120px;
       padding: 20px 0px;
       font-family: "Inter", sans-serif;
+      border-top: solid 3px var(--primary-color);
       .inCart-text-container-left{
         text-align: left;
         word-break: keep-all;
