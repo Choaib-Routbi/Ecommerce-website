@@ -32,7 +32,7 @@ const Cart = () => {
             </div>
             <div className="inCart-text-container">
               <div className="inCart-text-container-left">
-                <span>Sum :</span>
+                <span>Initial price :</span>
                 <br />
                 <span>Estimated Shipping :</span>
                 <br />
@@ -56,13 +56,14 @@ const Cart = () => {
                 {
                     shipping == 0 ? "Free" : shipping 
                 }
+                $
                 </span>
                 <br />
                 <span>Calculated at checkout</span>
                 <br />
                 <span>
                 {
-                    totalPrice >= 0 ? totalPriceARRAY.reduce((a, b) => a + b ,0).toFixed(2  ) : 0.00
+                    totalPrice >= 0 ? totalPriceARRAY.reduce((a, b) => a + b ,0).toFixed(2) : 0.00
                 }
                 $
                 </span>

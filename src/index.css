@@ -53,7 +53,7 @@ body {
   display: grid;
   box-sizing: border-box;
   border: solid 1px #3f3c3c;
-  margin-top: 20px;
+  margin-top: 5px;
   padding: 10px 20px;
   border-radius: 10px;
   border: none;
@@ -288,7 +288,7 @@ body {
 .collections-container {
   height: calc(100vh - 80px);
   border: solid 1px #3f3c3c;
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 10px 20px;
   border-radius: 10px;
   border: none;
@@ -462,7 +462,6 @@ body {
   height: calc(100vh - 0px);
   border: solid 1px #3f3c3c;
   margin-top: 20px;
-  padding: 10px 20px;
   border-radius: 10px;
   border: none;
   background-color: var(--main-background);
@@ -575,12 +574,14 @@ body {
     }
   }
 }
+.about-container::-webkit-scrollbar{
+  display: none;
+}
 .about-container {
   height: calc(100vh - 70px);
   border: solid 1px #3f3c3c;
   margin-top: 20px;
   margin-bottom: 10px;
-  padding: 10px 20px;
   border-radius: 10px;
   border: none;
   background-color: var(--main-background);
@@ -593,7 +594,7 @@ body {
   text-align: center;
   .about-container-content {
     width: 100%;
-    height: 100%;
+    height: fit-content;
     padding: 30px;
     border-radius: 10px;
     box-sizing: border-box;
@@ -663,15 +664,19 @@ body {
   box-sizing: border-box;
   box-sizing: border-box;
   overflow: hidden;
-
+  .cart-container-content::-webkit-scrollbar{
+    display: none;
+  }
   .cart-container-content {
-
-    
-    width: 100%;
+    display: grid;
+    align-content: center;
+    justify-items: center;
     height: 100%;
     padding: 30px;
     border-radius: 10px;
     box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: scroll;
     background-color: var(--main-background);
     /* background: transparent; */
     
@@ -697,39 +702,40 @@ body {
       justify-items: center;
       /* grid-template-rows: repeat(2, auto); */
       width: 100%;
-      height: calc(100% - 40px);
-      border-radius: 15px;
+      min-height: calc(100% - 100px);
+      max-height: calc(100% - 10px);
       box-sizing: border-box;
-    }
+   
     .inCart-cards-container::-webkit-scrollbar{
-      width: 8px;
+      display: none;
     }
     .inCart-cards-container::-webkit-scrollbar-thumb{
       background-color: var(--primary-color);
       border-radius: 15px;
+      display: none;
     }
     .inCart-cards-container{
       background-color: rgb(24, 11, 11);
       background-color: transparent;
-      border-radius: 15px;
       box-sizing: border-box;
-      height: 500px;
+      height: 400px;
+      width: 100%;
       text-align: center;
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
       justify-content:center;
       gap: 10px;
       overflow-y: scroll;
+      overflow-x: visible;
       padding: 10px;
-      /* width: 85%;    */
+      margin-bottom: 10px;
       p{
         margin: auto;
       }
       .product-card{
         background-color: #1a2033;
         height: fit-content;
-        min-width: 400px;
-        max-width:400px;
+        min-width: 300px;
+        max-width: 400px;
         display: grid;
         grid-template-columns: repeat(2,auto);
         column-gap: 10px;
@@ -739,7 +745,6 @@ body {
           align-content: space-around
         }
         .card-img {
-          height: 100%;
           aspect-ratio: 1 / 1;
           grid-row: span 1;
           overflow: hidden;
@@ -785,9 +790,13 @@ body {
         
       }
     }
+    }
   }
 }
 @media (max-width: 700px) {
+  body{
+    padding: 5px 5px;
+  }
   .home-container {
     h1 {
       font-size: clamp(1rem, 10vw, 7rem);
@@ -831,6 +840,7 @@ body {
     }
   }
   .navbar {
+    padding: 10px 0px;
     .nav-toggle {
       display: block;
     }
@@ -863,6 +873,7 @@ body {
     }
   }
   .topSales-container {
+    padding: 10px 10px;
     .subsection {
       padding: 30px 30px;
     }
@@ -885,6 +896,24 @@ body {
       .subsection-carousel-container {
         .arrow {
           display: none;
+        }
+      }
+    }
+  }
+  .cart-container {
+    padding: 10px 10px;
+    .cart-container-content {
+      padding: 10px;
+      .inCart-container{
+        .inCart-cards-container{
+          .product-card{
+            height: fit-content;
+            .card-infos {
+              }
+              .card-img{
+                height: 90px;
+              }
+          }
         }
       }
     }
