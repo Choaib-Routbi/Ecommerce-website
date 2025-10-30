@@ -7,7 +7,7 @@ const Products = () => {
 
   useEffect(() => {
     // fetch("https://my.api.mockaroo.com/tech_products_json.json?key=dc8d0e20")
-    fetch("https://mocki.io/v1/d82301eb-3c05-40dc-8c03-04af494527c8")
+    fetch("https://mocki.io/v1/e6889e03-1424-49ea-9332-44a42d20b677")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

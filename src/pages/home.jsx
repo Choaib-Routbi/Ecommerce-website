@@ -104,14 +104,14 @@ const Home = () => {
               sales={2432}
               rating={"4"}
               category={"a devies"}
-              price={91}
+              price={10}
             />
             <ProductCard
               name={"test2"}
               sales={2222}
               rating={"5"}
               category={"a devies"}
-              price={34}
+              price={10}
             />
             <ProductCard
               name={"test3"}

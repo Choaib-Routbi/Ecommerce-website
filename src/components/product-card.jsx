@@ -20,7 +20,7 @@ const ProductCard = ({
   const inCartTRUE_class = "card-addtocartBtn-inCART";
   const inCartFALSE = "add to cart";
   const inCartFALSE_class = "card-addtocartBtn";
-  const {updateCount, addToCart, removeFromCart, isInCart } = useContext(cartContext);
+  const {updateCount, addToCart, removeFromCart, isInCart , ADDtotalPriceCount , REMOVEtotalPriceCount } = useContext(cartContext);
 
   const product = {
     id,
@@ -40,8 +40,10 @@ const ProductCard = ({
 
   const addToCartFunction = () => {
     if (inCart) {
+      REMOVEtotalPriceCount(product.price)
       removeFromCart(product.name);
     } else {
+      ADDtotalPriceCount(product.price)
       addToCart(product);
     }
   };
