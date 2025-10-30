@@ -55,7 +55,7 @@ const About = () => {
           </p>
 
           <span className="section-title">Community & Values</span>
-          <p style={{marginBottom:"20px"}}>
+          <p style={{ marginBottom: "20px" }}>
             We’re more than just a store — we’re an active part of the global{" "}
             <strong>gaming community</strong>. From{" "}
             <strong>sponsoring local tournaments</strong> and hosting

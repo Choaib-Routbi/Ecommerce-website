@@ -574,7 +574,7 @@ body {
     }
   }
 }
-.about-container::-webkit-scrollbar{
+.about-container::-webkit-scrollbar {
   display: none;
 }
 .about-container {
@@ -664,7 +664,7 @@ body {
   box-sizing: border-box;
   box-sizing: border-box;
   overflow: hidden;
-  .cart-container-content::-webkit-scrollbar{
+  .cart-container-content::-webkit-scrollbar {
     display: none;
   }
   .cart-container-content {
@@ -679,7 +679,7 @@ body {
     overflow-y: scroll;
     background-color: var(--main-background);
     /* background: transparent; */
-    
+
     .section-title {
       text-align: center;
       margin: 0px;
@@ -689,7 +689,7 @@ body {
       text-transform: uppercase;
       font-family: "Saira", sans-serif;
     }
-    .section-subtitle{
+    .section-subtitle {
       font-size: 0.9rem;
       color: #c1c1c1;
       margin: 0%;
@@ -697,7 +697,7 @@ body {
       text-align: center;
       font-family: "Saira", sans-serif;
     }
-    .inCart-container{
+    .inCart-container {
       display: grid;
       justify-items: center;
       /* grid-template-rows: repeat(2, auto); */
@@ -705,96 +705,95 @@ body {
       min-height: calc(100% - 100px);
       max-height: calc(100% - 10px);
       box-sizing: border-box;
-   
-    .inCart-cards-container::-webkit-scrollbar{
-      display: none;
-    }
-    .inCart-cards-container::-webkit-scrollbar-thumb{
-      background-color: var(--primary-color);
-      border-radius: 15px;
-      display: none;
-    }
-    .inCart-cards-container{
-      background-color: rgb(24, 11, 11);
-      background-color: transparent;
-      box-sizing: border-box;
-      height: 400px;
-      width: 100%;
-      text-align: center;
-      display: grid;
-      justify-content:center;
-      gap: 10px;
-      overflow-y: scroll;
-      overflow-x: visible;
-      padding: 10px;
-      margin-bottom: 10px;
-      p{
-        margin: auto;
+
+      .inCart-cards-container::-webkit-scrollbar {
+        display: none;
       }
-      .product-card{
-        background-color: #1a2033;
-        height: fit-content;
-        min-width: 300px;
-        max-width: 400px;
+      .inCart-cards-container::-webkit-scrollbar-thumb {
+        background-color: var(--primary-color);
+        border-radius: 15px;
+        display: none;
+      }
+      .inCart-cards-container {
+        background-color: rgb(24, 11, 11);
+        background-color: transparent;
+        box-sizing: border-box;
+        height: 400px;
+        width: 100%;
+        text-align: center;
         display: grid;
-        grid-template-columns: repeat(2,auto);
-        column-gap: 10px;
-        .card-infos{
-          height: 100%;
-          width: 100%;
-          align-content: space-around
+        justify-content: center;
+        gap: 10px;
+        overflow-y: scroll;
+        overflow-x: visible;
+        padding: 10px;
+        margin-bottom: 10px;
+        p {
+          margin: auto;
         }
-        .card-img {
-          aspect-ratio: 1 / 1;
-          grid-row: span 1;
-          overflow: hidden;
-          height: 120px;
+        .product-card {
+          background-color: #1a2033;
+          height: fit-content;
+          min-width: 300px;
+          max-width: 400px;
+          display: grid;
+          grid-template-columns: repeat(2, auto);
+          column-gap: 10px;
+          .card-infos {
+            height: 100%;
+            width: 100%;
+            align-content: space-around;
+          }
+          .card-img {
+            aspect-ratio: 1 / 1;
+            grid-row: span 1;
+            overflow: hidden;
+            height: 120px;
+          }
         }
       }
-    }
-    .inCart-text-container{
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      height: 120px;
-      padding: 20px 0px;
-      font-family: "Inter", sans-serif;
-      border-top: solid 3px var(--primary-color);
-      .inCart-text-container-left{
-        text-align: left;
-        word-break: keep-all;
-      #incart-NEED_HELP {
-        color: #c1c1c1;
+      .inCart-text-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 120px;
+        padding: 20px 0px;
+        font-family: "Inter", sans-serif;
+        border-top: solid 3px var(--primary-color);
+        .inCart-text-container-left {
+          text-align: left;
+          word-break: keep-all;
+          #incart-NEED_HELP {
+            color: #c1c1c1;
+          }
+        }
+        .inCart-text-container-right {
+          text-align: right;
+          button {
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            width: 150px;
+            height: 30px;
+            padding: 3px 5px;
+            border: none;
+            outline: none;
+            color: aliceblue;
+            transition: all ease 0.2s;
+            background-color: var(--primary-color);
+          }
+          button:hover {
+            background-color: var(--hoverBG);
+          }
+          button:active {
+            transform: scale(0.9);
+          }
         }
       }
-      .inCart-text-container-right{
-        text-align: right;
-        button{
-          cursor: pointer;
-          border-radius: 5px;
-          text-align: center;
-          width: 150px;
-          height: 30px;
-          padding: 3px 5px;
-          border: none;
-          outline: none;
-          color: aliceblue;
-          transition: all ease 0.2s;
-          background-color: var(--primary-color);
-        }
-        button:hover{
-          background-color: var(--hoverBG);
-        }
-        button:active{
-          transform: scale(0.9);
-        }
-        
-      }
-    }
     }
   }
 }
 @media (max-width: 700px) {
-  body{
+  body {
     padding: 5px 5px;
   }
   .home-container {
@@ -904,15 +903,13 @@ body {
     padding: 10px 10px;
     .cart-container-content {
       padding: 10px;
-      .inCart-container{
-        .inCart-cards-container{
-          .product-card{
+      .inCart-container {
+        .inCart-cards-container {
+          .product-card {
             height: fit-content;
-            .card-infos {
-              }
-              .card-img{
-                height: 90px;
-              }
+            .card-img {
+              height: 90px;
+            }
           }
         }
       }

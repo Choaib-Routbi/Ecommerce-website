@@ -1,4 +1,4 @@
-import { useState, useEffect , useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { CartCountProvider } from "./cartContext";
 import { BrowserRouter as Router, Routes, Route, data } from "react-router-dom";
 import "./index.css";
@@ -12,22 +12,21 @@ import Account from "./pages/Account";
 import Cart from "./pages/cart";
 import Navbar from "./components/navbar";
 
-
 function App() {
   return (
     <CartCountProvider>
-    <div className="app-container">
-      <Navbar />
-      <Routes>
-        <Route path="*" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/collections" element={<Collections />} />
-        <Route path="/popular" element={<Popular />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/account" element={<Account/>} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
-    </div>
+      <div className="app-container">
+        <Navbar />
+        <Routes>
+          <Route path="*" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/collections" element={<Collections />} />
+          <Route path="/popular" element={<Popular />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </div>
     </CartCountProvider>
   );
 }

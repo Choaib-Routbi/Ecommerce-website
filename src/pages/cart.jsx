@@ -4,7 +4,8 @@ import ProductCard from "../components/product-card";
 import Products from "./products";
 
 const Cart = () => {
-  const { incartItems, removeFromCart , totalPrice , shipping , totalPriceARRAY } = useContext(cartContext);
+  const { incartItems, removeFromCart, totalPrice, shipping, totalPriceARRAY } =
+    useContext(cartContext);
   return (
     <div className="section cart">
       <div className="cart-container">
@@ -45,27 +46,17 @@ const Cart = () => {
                 </span>
               </div>
               <div className="inCart-text-container-right">
-                <span>
-                {
-                    totalPrice >= 0 ? totalPrice.toFixed(2) : 0.00
-                }
-                $
-                </span>
+                <span>{totalPrice >= 0 ? totalPrice.toFixed(2) : 0.0}$</span>
                 <br />
-                <span>
-                {
-                    shipping == 0 ? "Free" : shipping 
-                }
-                $
-                </span>
+                <span>{shipping == 0 ? "Free" : shipping}$</span>
                 <br />
                 <span>Calculated at checkout</span>
                 <br />
                 <span>
-                {
-                    totalPrice >= 0 ? totalPriceARRAY.reduce((a, b) => a + b ,0).toFixed(2) : 0.00
-                }
-                $
+                  {totalPrice >= 0
+                    ? totalPriceARRAY.reduce((a, b) => a + b, 0).toFixed(2)
+                    : 0.0}
+                  $
                 </span>
                 <br />
                 <button>Checkout</button>
