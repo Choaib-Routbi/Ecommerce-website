@@ -3,45 +3,88 @@ Form {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 30%;
-  height: 400px;
+  min-width: 50%;
+  max-width: 90%;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: var(--main-background);
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   justify-content: stretch;
   /* border: solid red; */
+  .section-title{
+    font-size: 1.7rem;
+    font-family: "Saira", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 100%;
+  }
 
-input {
-  height: 30px;
-  background: #242731;
-  color: aliceblue;
-  outline: none;
-  border: none;
-  padding: 0px 10px;
-  box-sizing: border-box ;
-  border-radius: 5px;
-  transition: all ease 0.1s;
-}
-input:focus{
-  background: #242630;
-}
-.main-btn{
-  margin-top: -20px;
-  height: 100%;
+  input {
+    height: 30px;
+    background: #242731;
+    color: aliceblue;
+    outline: none;
+    border: none;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    transition: all ease 0.05s;
+  }
+  input:focus {
+    background: #242630;
+    border: 2px solid var(--primary-color);
+  }
+  .main-btn {
+    height: 100%;
     width: 100%;
     display: grid;
     align-content: center;
     row-gap: 10px;
-  .forget-pswd{
-    text-align: center;
-    font-size: 0.8rem;
-    color: #c1c1c1;
+    .login-options{
+      color: #c1c1c1;
+      font-size: 0.7rem;
+      display: grid;
+      grid-template-columns: repeat(2,auto);
+      align-items: center;
+      .keep-logged-container{
+        display: flex;
+        align-items: center;
+        span{
+          font-size: clamp(0.5rem,0.6rem,0.7rem);
+        }
+      }
+      input{
+        height: 10px;
+      }
+      .forget-pswd {
+        text-align: right;
+        height: 100%;
+          font-size: clamp(0.5rem, 0.6rem, 0.7rem);
+        color: #c1c1c1;
+        .reset{
+          color: var(--primary-color);
+          text-decoration: underline;
+          font-size: 0.7rem;
+        }
+      }
+    }
+    .dont-have-account{
+          font-size: clamp(0.5rem, 0.7rem, 0.7rem);
+      color: #c1c1c1;
+      .reset {
+          color: var(--primary-color);
+          text-decoration: underline;
+        }
+    }
   }
-}
-button  {
+  button {
     height: 30px;
     width: 100%;
-    background-color:  var(--primary-color);
+    background-color: var(--primary-color);
     color: aliceblue;
+    font-size: 1rem;
     border-radius: 5px;
     border: none;
     outline: none;
@@ -49,34 +92,49 @@ button  {
     cursor: pointer;
     transition: all ease 0.2s;
   }
-  button:hover{
+  button:hover {
     background-color: var(--hoverBG);
   }
-  .inputANDlabel-container{
+  .inputANDlabel-container {
     display: grid;
     height: 70px;
-    label{
-        height: fit-content;
-        font-size: 1rem;
+    label {
+      height: fit-content;
+      font-size: 1rem;
     }
   }
-  .other-choice{
+  .other-choice {
     height: 100%;
     width: 100%;
     display: grid;
     align-content: center;
     row-gap: 10px;
     /* border-top: solid 3px var(--primary-color); */
-    span{
+    span {
       color: #c1c1c1;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       text-align: center;
     }
-    
-      .form-btn{
-        justify-self: center;
-      }
-    
+
+    .form-btn {
+      justify-self: center;
+    }
+  }
+  .with-socialmedia-container{
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    span{
+      color: #c1c1c1;
+      font-size: 0.7rem;
+      text-align: center;
+    }
+    svg{
+      margin-top: 10px;
+      height: 20px;
+      width: 20px;
+      fill: aliceblue;
+      margin: 2px;
+    }
   }
 }
-

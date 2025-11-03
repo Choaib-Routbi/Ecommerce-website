@@ -21,10 +21,10 @@ const SignupPage = () => {
         </div>
         <button>sign up</button>
         <div className="other-choice">
-        <span>already have an account ?</span>
-        <NavLink to="/login">
-          <button>login</button>
-        </NavLink>
+          <span>already have an account ?</span>
+          <NavLink to="/login">
+            <button>login</button>
+          </NavLink>
         </div>
       </form>
     </div>
