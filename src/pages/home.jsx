@@ -60,10 +60,7 @@ const Home = () => {
             gamers who demand speed, control, and style
           </p>
           <div className="home-CTA-container">
-            <Routes>
-              <Route path="/products" element={<Products />} />
-              <Route path="/collections" element={<Collections />} />
-            </Routes>
+    
             <NavLink to={"/products"} className="shop">
               shop now
             </NavLink>

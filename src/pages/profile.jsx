@@ -1,14 +1,15 @@
 import React from "react";
 
-const Account = () => {
+const Profile = () => {
   return (
     <div className="section account">
       <div className="account-container">
         <div className="account-container-content">
-          <p className="section-title">account</p>
+          <p className="section-title">profile</p>
+          
         </div>
       </div>
     </div>
   );
 };
-export default Account;
+export default Profile;

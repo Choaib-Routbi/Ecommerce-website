@@ -1,0 +1,82 @@
+Form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 400px;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  justify-content: stretch;
+  /* border: solid red; */
+
+input {
+  height: 30px;
+  background: #242731;
+  color: aliceblue;
+  outline: none;
+  border: none;
+  padding: 0px 10px;
+  box-sizing: border-box ;
+  border-radius: 5px;
+  transition: all ease 0.1s;
+}
+input:focus{
+  background: #242630;
+}
+.main-btn{
+  margin-top: -20px;
+  height: 100%;
+    width: 100%;
+    display: grid;
+    align-content: center;
+    row-gap: 10px;
+  .forget-pswd{
+    text-align: center;
+    font-size: 0.8rem;
+    color: #c1c1c1;
+  }
+}
+button  {
+    height: 30px;
+    width: 100%;
+    background-color:  var(--primary-color);
+    color: aliceblue;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: auto;
+    cursor: pointer;
+    transition: all ease 0.2s;
+  }
+  button:hover{
+    background-color: var(--hoverBG);
+  }
+  .inputANDlabel-container{
+    display: grid;
+    height: 70px;
+    label{
+        height: fit-content;
+        font-size: 1rem;
+    }
+  }
+  .other-choice{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    align-content: center;
+    row-gap: 10px;
+    /* border-top: solid 3px var(--primary-color); */
+    span{
+      color: #c1c1c1;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+    
+      .form-btn{
+        justify-self: center;
+      }
+    
+  }
+}
+
