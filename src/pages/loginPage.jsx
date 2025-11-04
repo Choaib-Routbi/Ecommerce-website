@@ -4,12 +4,14 @@ import { NavLink } from "react-router-dom";
 import { login } from "../auth/authServices";
 import { getUserData } from "../auth/userData";
 import { doc, setDoc, getDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 
 
 
 
 const LoginPage = () => {
+const navigate = useNavigate();
 
 const [email,setEmail]= useState("")
 const [password,setPassword]= useState("")
@@ -21,7 +23,9 @@ const handleLogin = async (e) => {
       const uid = userCredential.user.uid;
       const userData = await getUserData(uid);
       alert(`Welcome ${userData?.Name || "User"}!`);
-      
+
+      navigate("/home")
+
   };
 
 

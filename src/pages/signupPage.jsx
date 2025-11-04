@@ -4,11 +4,11 @@ import { NavLink } from "react-router-dom";
 import { signUp } from "../auth/authServices";
 import { saveUserData } from "../auth/userData";
 import { doc, setDoc, getDoc } from "firebase/firestore";
-
+import { useNavigate } from "react-router-dom";
 
 
 const SignupPage = () => {
-
+const navigate = useNavigate()
 const [form,setForm]= useState({
   name:"", email:"", phone:"", password:"" 
 })
@@ -31,6 +31,8 @@ const [form,setForm]= useState({
 
       alert("User registered successfully!");
       setForm({fullname:"", email:"", phone:"", password:""})
+
+      navigate("/login")
 }
 
 
