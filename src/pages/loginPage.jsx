@@ -19,7 +19,12 @@ const LoginPage = () => {
         </div>
         <div className="inputANDlabel-container">
           <label htmlFor="pswd">password</label>
-          <input id="pswd" className="pswd-input" type="text" />
+          <input 
+          id="pswd" 
+          className="pswd-input" 
+          type="text" 
+          placeholder="password"
+          />
         </div>
         <div className="main-btn">
           <div className="login-options">
@@ -28,7 +33,7 @@ const LoginPage = () => {
             <span>keep me logged in</span>
           </div>
           <div className="forget-pswd">
-            <NavLink to={"/home"}><a href="#" className="reset">forgot password</a></NavLink>
+            <NavLink to={"/home"}><span href="#" className="reset">forgot password</span></NavLink>
           </div>
           </div>
 
@@ -37,7 +42,7 @@ const LoginPage = () => {
           <span className="dont-have-account">
             dont have an account ?  
            <NavLink to="/signup">
-            <a className="reset">sign up</a>
+            <span className="reset">sign up</span>
           </NavLink>
           </span>
         </div>

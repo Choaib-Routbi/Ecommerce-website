@@ -1,17 +1,20 @@
-Form {
+form , .loginForm {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  min-width: 50%;
-  max-width: 90%;
+  min-width: 70%;
+  max-width: 50%;
   height: fit-content;
   padding: 20px;
   border-radius: 5px;
   background-color: var(--main-background);
   display: grid;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(5, auto);
   justify-content: stretch;
+  .inputANDlabel-container{
+    margin-bottom: 15px;
+  }
   /* border: solid red; */
   .section-title{
     font-size: 1.7rem;
@@ -19,6 +22,7 @@ Form {
     font-weight: 700;
     text-transform: uppercase;
     line-height: 100%;
+    margin-bottom: 50px;
   }
 
   input {
@@ -51,8 +55,12 @@ Form {
       .keep-logged-container{
         display: flex;
         align-items: center;
+        .terms{
+          color: aliceblue;
+          text-decoration: underline;
+        }
         span{
-          font-size: clamp(0.5rem,0.6rem,0.7rem);
+          font-size: clamp(0.6rem,0.6rem,0.7rem);
         }
       }
       input{
@@ -61,7 +69,7 @@ Form {
       .forget-pswd {
         text-align: right;
         height: 100%;
-          font-size: clamp(0.5rem, 0.6rem, 0.7rem);
+        font-size: clamp(0.5rem, 0.6rem, 0.7rem);
         color: #c1c1c1;
         .reset{
           color: var(--primary-color);
@@ -124,6 +132,10 @@ Form {
     width: 100%;
     text-align: center;
     margin-top: 30px;
+    .svg-container{
+      margin: 20px 0px 5px 0px ;
+      /* border: solid var(--primary-color); */
+    }
     span{
       color: #c1c1c1;
       font-size: 0.7rem;
@@ -131,10 +143,10 @@ Form {
     }
     svg{
       margin-top: 10px;
-      height: 20px;
-      width: 20px;
+      height: 25px;
+      width: 25px;
       fill: aliceblue;
-      margin: 2px;
+      margin: 5px;
     }
   }
 }
