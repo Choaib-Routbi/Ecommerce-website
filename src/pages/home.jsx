@@ -8,11 +8,14 @@ import {
 } from "react-router-dom";
 import ProductCard from "../components/product-card";
 
+  import { auth } from "../firebase";
+
+
 import Collections from "./collections";
 import Products from "./products";
 
 const Home = () => {
-  const targetDate = new Date("2025-11-20T20:59:59"); // 🎯 your countdown target
+  const targetDate = new Date("2025-11-20T20:59:59"); 
 
   const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
 
@@ -46,6 +49,8 @@ const Home = () => {
 
     return () => clearInterval(timer);
   }, []);
+
+  console.log(auth);
   return (
     <div className="section home">
       <div className="home-blury-bg"></div>
@@ -60,7 +65,7 @@ const Home = () => {
             gamers who demand speed, control, and style
           </p>
           <div className="home-CTA-container">
-    
+
             <NavLink to={"/products"} className="shop">
               shop now
             </NavLink>

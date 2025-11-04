@@ -1,11 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "../loginANDsignup.css";
 import { NavLink } from "react-router-dom";
+import { login } from "../auth/authServices";
+import { getUserData } from "../auth/userData";
+import { doc, setDoc, getDoc } from "firebase/firestore";
+
+
+
+
 
 const LoginPage = () => {
+
+const [email,setEmail]= useState("")
+const [password,setPassword]= useState("")
+
+const handleLogin = async (e) => {
+    e.preventDefault();
+
+      const userCredential = await login(email, password);
+      const uid = userCredential.user.uid;
+      const userData = await getUserData(uid);
+      alert(`Welcome ${userData?.Name || "User"}!`);
+      
+  };
+
+
+
+
   return (
     <div className="section loginPage">
-      <form className="loginForm">
+      <form onSubmit={handleLogin} className="loginForm">
       
       <span className="section-title">Sign in to your account</span>
         <div className="inputANDlabel-container">
@@ -15,6 +39,9 @@ const LoginPage = () => {
             className="form-btn"
             type="email"
             placeholder="example@example.com"
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} 
+            required
           />
         </div>
         <div className="inputANDlabel-container">
@@ -24,6 +51,9 @@ const LoginPage = () => {
           className="pswd-input" 
           type="text" 
           placeholder="password"
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)} 
+          required
           />
         </div>
         <div className="main-btn">
@@ -37,7 +67,7 @@ const LoginPage = () => {
           </div>
           </div>
 
-          <button>login</button>
+          <button type="submit">login</button>
 
           <span className="dont-have-account">
             dont have an account ?  

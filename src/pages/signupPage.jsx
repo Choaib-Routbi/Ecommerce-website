@@ -1,46 +1,97 @@
-import React from "react";
+import React, { useState } from "react";
 import "../loginANDsignup.css";
 import { NavLink } from "react-router-dom";
+import { signUp } from "../auth/authServices";
+import { saveUserData } from "../auth/userData";
+import { doc, setDoc, getDoc } from "firebase/firestore";
+
+
+
 const SignupPage = () => {
+
+const [form,setForm]= useState({
+  name:"", email:"", phone:"", password:"" 
+})
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+      const userCredential = await signUp(form.email, form.password);
+      const uid = userCredential.user.uid;
+
+      await saveUserData(uid, {
+        name: form.fullname,
+        phone: form.phone,
+        email: form.email,
+      });
+
+      alert("User registered successfully!");
+      setForm({fullname:"", email:"", phone:"", password:""})
+}
+
+
   return (
     <div className="section signupPage">
-<form className="signupForm">
+<form onSubmit={handleSubmit} className="signupForm">
       
       <span className="section-title">create new account</span>
         <div className="inputANDlabel-container">
           <label htmlFor="fullname">fullname</label>
           <input
+          name="fullname"
             id="fullname"
             className="form-btn"
             type="text"
             placeholder="fullname"
+            value={form.fullname}
+            onChange={handleChange}
+            required
           />
         </div>
         <div className="inputANDlabel-container">
           <label htmlFor="phone">phone</label>
           <input
+          name="phone"
             id="phone"
             className="form-btn"
             type="phone"
             placeholder="+00 00 00 00 00"
+            value={form.phone}
+            onChange={handleChange}
+            required
+
           />
         </div>
         <div className="inputANDlabel-container">
           <label htmlFor="email">email</label>
           <input
+          name="email"
             id="email"
             className="form-btn"
             type="email"
             placeholder="example@example.com"
+            value={form.email}
+            onChange={handleChange}
+            required
+
           />
         </div>
         <div className="inputANDlabel-container">
           <label htmlFor="pswd">password</label>
           <input 
+          name="password"
           id="pswd" 
           className="pswd-input" 
           type="text" 
-          placeholder="password" 
+          placeholder="password"
+          value={form.password}
+          onChange={handleChange}
+            required
+
           />
         </div>
         <div className="main-btn">
