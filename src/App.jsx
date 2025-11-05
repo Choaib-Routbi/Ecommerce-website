@@ -14,24 +14,36 @@ import Profile from "./pages/profile";
 import LoginPage from "./pages/loginPage";
 import SigninPage from "./pages/signupPage";
 
+import { AuthProvider } from "./userContext";
+import ProtectedRoute from "./protectRoute";
+
 function App() {
   return (
-    <CartCountProvider>
-      <div className="app-container">
-        <Navbar />
-        <Routes>
-          <Route path="*" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/collections" element={<Collections />} />
-          <Route path="/popular" element={<Popular />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SigninPage />} />
-        </Routes>
-      </div>
-    </CartCountProvider>
+    <AuthProvider>
+      <CartCountProvider>
+        <div className="app-container">
+          <Navbar />
+          <Routes>
+            <Route path="*" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/collections" element={<Collections />} />
+            <Route path="/popular" element={<Popular />} />
+            <Route path="/about" element={<About />} />
+            <Route
+              path="/cart"
+              element={
+                <ProtectedRoute>
+                  <Cart />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SigninPage />} />
+          </Routes>
+        </div>
+      </CartCountProvider>
+    </AuthProvider>
   );
 }
 

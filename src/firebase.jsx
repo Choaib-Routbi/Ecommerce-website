@@ -8,7 +8,7 @@ const firebaseConfig = {
   projectId: "ecommerce-react-app-3751e",
   storageBucket: "ecommerce-react-app-3751e.firebasestorage.app",
   messagingSenderId: "1041989434759",
-  appId: "1:1041989434759:web:96d44d6aab0373f99d2722"
+  appId: "1:1041989434759:web:96d44d6aab0373f99d2722",
 };
 
 // Init Firebase

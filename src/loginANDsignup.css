@@ -1,4 +1,5 @@
-form , .loginForm {
+form,
+.loginForm {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -12,11 +13,11 @@ form , .loginForm {
   display: grid;
   grid-template-rows: repeat(5, auto);
   justify-content: stretch;
-  .inputANDlabel-container{
+  .inputANDlabel-container {
     margin-bottom: 15px;
   }
   /* border: solid red; */
-  .section-title{
+  .section-title {
     font-size: 1.7rem;
     font-family: "Saira", sans-serif;
     font-weight: 700;
@@ -46,24 +47,24 @@ form , .loginForm {
     display: grid;
     align-content: center;
     row-gap: 10px;
-    .login-options{
+    .login-options {
       color: #c1c1c1;
       font-size: 0.7rem;
       display: grid;
-      grid-template-columns: repeat(2,auto);
+      grid-template-columns: repeat(2, auto);
       align-items: center;
-      .keep-logged-container{
+      .keep-logged-container {
         display: flex;
         align-items: center;
-        .terms{
+        .terms {
           color: aliceblue;
           text-decoration: underline;
         }
-        span{
-          font-size: clamp(0.6rem,0.6rem,0.7rem);
+        span {
+          font-size: clamp(0.6rem, 0.6rem, 0.7rem);
         }
       }
-      input{
+      input {
         height: 10px;
       }
       .forget-pswd {
@@ -71,20 +72,20 @@ form , .loginForm {
         height: 100%;
         font-size: clamp(0.5rem, 0.6rem, 0.7rem);
         color: #c1c1c1;
-        .reset{
+        .reset {
           color: var(--primary-color);
           text-decoration: underline;
           font-size: 0.7rem;
         }
       }
     }
-    .dont-have-account{
-          font-size: clamp(0.5rem, 0.7rem, 0.7rem);
+    .dont-have-account {
+      font-size: clamp(0.5rem, 0.7rem, 0.7rem);
       color: #c1c1c1;
       .reset {
-          color: var(--primary-color);
-          text-decoration: underline;
-        }
+        color: var(--primary-color);
+        text-decoration: underline;
+      }
     }
   }
   button {
@@ -102,6 +103,9 @@ form , .loginForm {
   }
   button:hover {
     background-color: var(--hoverBG);
+  }
+  button:active {
+    transform: scale(0.98);
   }
   .inputANDlabel-container {
     display: grid;
@@ -128,20 +132,20 @@ form , .loginForm {
       justify-self: center;
     }
   }
-  .with-socialmedia-container{
+  .with-socialmedia-container {
     width: 100%;
     text-align: center;
     margin-top: 30px;
-    .svg-container{
-      margin: 20px 0px 5px 0px ;
+    .svg-container {
+      margin: 20px 0px 5px 0px;
       /* border: solid var(--primary-color); */
     }
-    span{
+    span {
       color: #c1c1c1;
       font-size: 0.7rem;
       text-align: center;
     }
-    svg{
+    svg {
       margin-top: 10px;
       height: 25px;
       width: 25px;

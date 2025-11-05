@@ -6,7 +6,6 @@ const Profile = () => {
       <div className="account-container">
         <div className="account-container-content">
           <p className="section-title">profile</p>
-          
         </div>
       </div>
     </div>

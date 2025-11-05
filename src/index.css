@@ -220,6 +220,9 @@ body {
     grid-template-columns: repeat(4, auto);
     align-items: center;
     column-gap: 10px;
+    .nav-toggle-btn {
+      display: none;
+    }
     .loginBtn {
       background-color: var(--primary-color);
       color: aliceblue;
@@ -880,6 +883,12 @@ body {
       .nav-btn {
         text-decoration: none;
         padding: 5px 10px;
+      }
+    }
+    .nav-icons-container {
+      grid-template-columns: repeat(5, auto);
+      .nav-toggle-btn {
+        display: block;
       }
     }
   }

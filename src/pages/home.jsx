@@ -8,9 +8,8 @@ import {
 } from "react-router-dom";
 import ProductCard from "../components/product-card";
 
-
 const Home = () => {
-  const targetDate = new Date("2025-11-20T20:59:59"); 
+  const targetDate = new Date("2025-11-20T20:59:59");
 
   const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
 
@@ -59,7 +58,6 @@ const Home = () => {
             gamers who demand speed, control, and style
           </p>
           <div className="home-CTA-container">
-
             <NavLink to={"/products"} className="shop">
               shop now
             </NavLink>
