@@ -39,7 +39,23 @@ form,
   }
   input:focus {
     background: #242630;
-    border: 2px solid var(--primary-color);
+    border: solid 2px var(--primary-color);
+  }
+  .pswd-input:focus{
+    border: solid 2px var(--primary-color);
+  }
+  .error-input{
+    border: solid 1px var(--error);
+  }
+  .error-input:focus{
+    border: 1px solid var(--error);
+  }
+  .incorrect-data{
+    color: var(--error);
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
   }
   .main-btn {
     height: 100%;

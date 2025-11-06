@@ -11,16 +11,24 @@ const LoginPage = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
+  
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    try{
 
-    const userCredential = await login(email, password);
-    const uid = userCredential.user.uid;
-    const userData = await getUserData(uid);
-    alert(`Welcome ${userData?.Name || "User"}!`);
-
-    navigate("/home");
+      setError(false)
+      const userCredential = await login(email, password);
+      const uid = userCredential.user.uid;
+      const userData = await getUserData(uid);
+      alert(`Welcome ${userData?.name || "User"}!`);
+      navigate("/home");
+      
+    }catch (err){
+      console.log("errrrrrrrrrrrrrrrror",err);
+      setError(true)
+    }
   };
 
   return (
@@ -51,6 +59,9 @@ const LoginPage = () => {
             required
           />
         </div>
+        {
+          error && <span className="incorrect-data">incorrect login info !</span>
+        }
         <div className="main-btn">
           <div className="login-options">
             <div className="keep-logged-container">

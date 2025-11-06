@@ -5,6 +5,7 @@
   --background-color: #0d0f16;
   --text-color: #1a1a1a;
   --main-background: #21283094;
+  --error:rgb(255, 83, 31);
 }
 a:-webkit-any-link {
   text-decoration: none;

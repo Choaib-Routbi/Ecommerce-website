@@ -6,7 +6,13 @@ export const signUp = (email, password) =>{
 }
 
 export const login = (email, password) =>{
-    return signInWithEmailAndPassword(auth, email, password)
+    try{
+        return signInWithEmailAndPassword(auth, email, password)
+    }catch(err){
+        console.error("password incorrect :" );
+        
+    }
+    
 }
 
 export const logout = ()=>{
