@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import { cartContext } from "../cartContext";
 import { useEffect } from "react";
+import { useAuth } from "../userContext";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({
   brand,
@@ -45,15 +47,24 @@ const ProductCard = ({
   };
   const inCart = isInCart(product.name);
 
+  const { user } = useAuth();
+  const navigate = useNavigate()
+
   const addToCartFunction = () => {
-    if (inCart) {
+  if (!user){
+    console.log("to login");
+    navigate("/login")
+    return;
+  }
+
+  if (inCart) {
       REMOVEtotalPriceCount(product.price);
       removeFromCart(product.name);
     } else {
       ADDtotalPriceCount(product.price);
       addToCart(product);
     }
-  };
+  } 
 
   return (
     <div className="product-card">
@@ -87,12 +98,14 @@ const ProductCard = ({
           <div className="card-price">{price || "price"}$</div>
         </div>
         <div className="card-btns">
+
           <button
             onClick={addToCartFunction}
             className={inCart ? inCartTRUE_class : inCartFALSE_class}
           >
             {inCart ? inCartTRUE : inCartFALSE}
           </button>
+
           <svg
             className="card-likeBtn"
             xmlns="http://www.w3.org/2000/svg"
