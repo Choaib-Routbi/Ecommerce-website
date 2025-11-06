@@ -20,10 +20,10 @@ const LoginPage = () => {
       const userCredential = await login(email, password);
       const uid = userCredential.user.uid;
       const userData = await getUserData(uid);
-      alert(`Welcome ${userData?.name || "User"}!`);
+      alert(`Welcome ${userData?.name || "User"} !`);
       navigate("/home");
     } catch (err) {
-      console.log("errrrrrrrrrrrrrrrror", err);
+      console.log("errrrror", err);
       setError(true);
     }
   };

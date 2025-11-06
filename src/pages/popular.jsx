@@ -18,7 +18,7 @@ const Popular = () => {
   const sliderRef = useRef(null);
   const scroll = (direction) => {
     const container = sliderRef.current;
-    const scrollAmount = container.clientWidth * 0.2;
+    const scrollAmount = container.clientWidth * 0.5;
     container.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",

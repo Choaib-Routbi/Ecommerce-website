@@ -1,13 +1,50 @@
 import React, { useState, useEffect, useContext, createContext } from "react";
+import { useAuth } from "./userContext";
+import { login } from "./auth/authServices";
+
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { db } from "./firebase";
 
 export const cartContext = createContext();
 
 export function CartCountProvider({ children }) {
+const {user} = useAuth()
+// console.log(user.uid);
+
+const userId = user?.uid || "guest";
+
   const [incartItems, setIncartItems] = useState(() => {
-    const saved = localStorage.getItem("incartItems");
+    const saved = localStorage.getItem(`incartItems_${userId}`); 
     return saved ? JSON.parse(saved) : [];
   });
+
+
+      useEffect(() => {
+    if (!user) return;
+
+    const cartRef = doc(db, "carts", user.uid);
+
+    const loadAndSyncCart = async () => {
+      try {
+        const snap = await getDoc(cartRef);
+        if (snap.exists()) {
+          const data = snap.data();
+          if (data.items) setIncartItems(data.items);
+          if (data.totalPrice) setTotalPrice(data.totalPrice);
+        } else {
+          await setDoc(cartRef, { items: [], totalPrice: 0 });
+        }
+      } catch (err) {
+        console.error("Error syncing cart:", err);
+      }
+    };
+
+    loadAndSyncCart();
+  }, [user]);
+
+  
   const incartCount = incartItems.length;
+
   let shipping;
   if (incartItems.length <= 1) {
     shipping = 0;
@@ -18,22 +55,40 @@ export function CartCountProvider({ children }) {
   } else {
     shipping = 30;
   }
-  const [totalPrice, setTotalPrice] = useState(() => {
-    const saved = localStorage.getItem("totalPrice");
+   const [totalPrice, setTotalPrice] = useState(() => {
+    const saved = localStorage.getItem(`totalPrice_${userId}`); 
     return saved ? JSON.parse(saved) : 0;
   });
 
-  //   localStorage.clear()
+    // localStorage.clear()
 
   const totalPriceARRAY = [shipping, totalPrice];
 
   useEffect(() => {
-    localStorage.setItem("incartItems", JSON.stringify(incartItems));
-  }, [incartItems]);
+    localStorage.setItem(`incartItems_${userId}`, JSON.stringify(incartItems)); 
+  }, [incartItems, userId]);
 
   useEffect(() => {
-    localStorage.setItem("totalPrice", JSON.stringify(totalPrice));
-  }, [totalPrice]);
+    localStorage.setItem(`totalPrice_${userId}`, JSON.stringify(totalPrice)); 
+  }, [totalPrice, userId]);
+
+useEffect(() => {
+  if (!user) return;
+
+  //guard values
+  const safeItems = Array.isArray(incartItems) ? incartItems : [];
+  const safeTotal = typeof totalPrice === "number" ? totalPrice : 0;
+
+  const cartRef = doc(db, "carts", user.uid);
+
+  setDoc(cartRef, { items: safeItems, totalPrice: safeTotal }, { merge: true })
+    .catch((err) => console.error("Error saving cart:", err));
+}, [incartItems, totalPrice, user]);
+
+
+
+
+
 
   const ADDtotalPriceCount = (price) => {
     setTotalPrice((prev) => prev + price);
@@ -47,7 +102,7 @@ export function CartCountProvider({ children }) {
     setIncartItems((prev) => {
       const exists = prev.find((item) => item.name === product.name);
 
-      if (exists) return prev; // already added
+      if (exists) return prev; 
       return [...prev, product];
     });
     console.log("added");
