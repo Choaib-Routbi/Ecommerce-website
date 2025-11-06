@@ -42,7 +42,7 @@ const userId = user?.uid || "guest";
     loadAndSyncCart();
   }, [user]);
 
-  
+
   const incartCount = incartItems.length;
 
   let shipping;
@@ -87,7 +87,7 @@ useEffect(() => {
 
 
 
-
+deleteDoc 
 
 
   const ADDtotalPriceCount = (price) => {
