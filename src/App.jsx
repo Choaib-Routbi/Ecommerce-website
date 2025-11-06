@@ -37,13 +37,13 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            <Route 
-              path="/profile" 
+            <Route
+              path="/profile"
               element={
                 <ProtectedRoute>
                   <Profile />
                 </ProtectedRoute>
-              } 
+              }
             />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SigninPage />} />

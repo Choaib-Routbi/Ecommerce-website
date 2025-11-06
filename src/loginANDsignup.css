@@ -41,20 +41,20 @@ form,
     background: #242630;
     border: solid 2px var(--primary-color);
   }
-  .pswd-input:focus{
+  .pswd-input:focus {
     border: solid 2px var(--primary-color);
   }
-  .error-input{
+  .error-input {
     border: solid 1px var(--error);
   }
-  .error-input:focus{
+  .error-input:focus {
     border: 1px solid var(--error);
   }
-  .incorrect-data{
+  .incorrect-data {
     color: var(--error);
     font-size: 0.8rem;
     margin-bottom: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     letter-spacing: 1px;
   }
   .main-btn {

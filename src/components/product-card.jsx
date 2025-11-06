@@ -48,23 +48,23 @@ const ProductCard = ({
   const inCart = isInCart(product.name);
 
   const { user } = useAuth();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const addToCartFunction = () => {
-  if (!user){
-    console.log("to login");
-    navigate("/login")
-    return;
-  }
+    if (!user) {
+      console.log("to login");
+      navigate("/login");
+      return;
+    }
 
-  if (inCart) {
+    if (inCart) {
       REMOVEtotalPriceCount(product.price);
       removeFromCart(product.name);
     } else {
       ADDtotalPriceCount(product.price);
       addToCart(product);
     }
-  } 
+  };
 
   return (
     <div className="product-card">
@@ -98,7 +98,6 @@ const ProductCard = ({
           <div className="card-price">{price || "price"}$</div>
         </div>
         <div className="card-btns">
-
           <button
             onClick={addToCartFunction}
             className={inCart ? inCartTRUE_class : inCartFALSE_class}
