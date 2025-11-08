@@ -10,7 +10,7 @@ function Navbar() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 700) {
         setNavtoggleARG(false);
       } else {
         setNavtoggleARG(true);

@@ -45,6 +45,8 @@ const ProductCard = ({
     createdAt,
     sales,
   };
+
+  const [ , setDummyStat] = useState("0")
   const inCart = isInCart(product.name);
 
   const { user } = useAuth();
@@ -55,16 +57,21 @@ const ProductCard = ({
       console.log("to login");
       navigate("/login");
       return;
+    }else{
+      null
     }
 
     if (inCart) {
       REMOVEtotalPriceCount(product.price);
       removeFromCart(product.name);
     } else {
-      ADDtotalPriceCount(product.price);
-      addToCart(product);
+        
+        ADDtotalPriceCount(product.price);
+        addToCart(product);
+        setDummyStat("1")
+      // window.location.reload()
     }
-  };
+  }
 
   return (
     <div className="product-card">

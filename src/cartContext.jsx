@@ -8,20 +8,19 @@ import { db } from "./firebase";
 export const cartContext = createContext();
 
 export function CartCountProvider({ children }) {
-const {user} = useAuth()
-// console.log(user.uid);
+  const { user } = useAuth();
+  // console.log(user.uid);
 
-const userId = user?.uid || "guest";
+  const userId = user?.uid || "guest";
 
   const [incartItems, setIncartItems] = useState(() => {
-    const saved = localStorage.getItem(`incartItems_${userId}`); 
+    const saved = localStorage.getItem(`incartItems_${userId}`);
     return saved ? JSON.parse(saved) : [];
   });
 
-
-      useEffect(() => {
+  useEffect(() => {
     if (!user) return;
-
+    
     const cartRef = doc(db, "carts", user.uid);
 
     const loadAndSyncCart = async () => {
@@ -42,7 +41,6 @@ const userId = user?.uid || "guest";
     loadAndSyncCart();
   }, [user]);
 
-
   const incartCount = incartItems.length;
 
   let shipping;
@@ -55,40 +53,41 @@ const userId = user?.uid || "guest";
   } else {
     shipping = 30;
   }
-   const [totalPrice, setTotalPrice] = useState(() => {
-    const saved = localStorage.getItem(`totalPrice_${userId}`); 
+  const [totalPrice, setTotalPrice] = useState(() => {
+    const saved = localStorage.getItem(`totalPrice_${userId}`);
     return saved ? JSON.parse(saved) : 0;
   });
 
-    // localStorage.clear()
+  // localStorage.clear()
 
   const totalPriceARRAY = [shipping, totalPrice];
 
   useEffect(() => {
-    localStorage.setItem(`incartItems_${userId}`, JSON.stringify(incartItems)); 
+    localStorage.setItem(`incartItems_${userId}`, JSON.stringify(incartItems));
   }, [incartItems, userId]);
 
   useEffect(() => {
-    localStorage.setItem(`totalPrice_${userId}`, JSON.stringify(totalPrice)); 
+    localStorage.setItem(`totalPrice_${userId}`, JSON.stringify(totalPrice));
   }, [totalPrice, userId]);
 
-useEffect(() => {
-  if (!user) return;
+  useEffect(() => {
+    if (!user) return;
 
-  //guard values
-  const safeItems = Array.isArray(incartItems) ? incartItems : [];
-  const safeTotal = typeof totalPrice === "number" ? totalPrice : 0;
+    //guard values
+    const cartRef = doc(db, "carts", user.uid);
 
-  const cartRef = doc(db, "carts", user.uid);
+    const safeItems = Array.isArray(incartItems) ? incartItems : [];
+    const safeTotal = typeof totalPrice === "number" ? totalPrice : 0;
+    console.log(safeTotal);
+    console.log(safeItems);
 
-  setDoc(cartRef, { items: safeItems, totalPrice: safeTotal }, { merge: true })
-    .catch((err) => console.error("Error saving cart:", err));
-}, [incartItems, totalPrice, user]);
+    setDoc(
 
-
-
-deleteDoc 
-
+      cartRef,
+      { items: safeItems, totalPrice: safeTotal },
+      { merge: true }
+    ).catch((err) => console.error("Error saving cart:", err));
+  }, [incartItems, totalPrice, user]);
 
   const ADDtotalPriceCount = (price) => {
     setTotalPrice((prev) => prev + price);
@@ -98,15 +97,31 @@ deleteDoc
     setTotalPrice((prev) => prev - price);
   };
 
-  const addToCart = (product) => {
-    setIncartItems((prev) => {
-      const exists = prev.find((item) => item.name === product.name);
+const addToCart = (product) => {
+  // remove undefined values from the product
+  const cleanedProduct = Object.fromEntries(
+    Object.entries(product).filter(([_, v]) => v !== undefined)
+  );
 
-      if (exists) return prev; 
-      return [...prev, product];
-    });
-    console.log("added");
-  };
+  setIncartItems((prev) => {
+    const exists = prev.find((item) => item.name === cleanedProduct.name);
+    if (exists) return prev;
+    return [...prev, cleanedProduct];
+  });
+
+  console.log("added");
+};
+
+
+  // const addToCart = (product) => {
+  //   setIncartItems((prev) => {
+  //     const exists = prev.find((item) => item.name === product.name);
+
+  //     if (exists) return prev;
+  //     return [...prev, product];
+  //   });
+  //   console.log("added");
+  // };
 
   const removeFromCart = (productID) => {
     setIncartItems((prev) => prev.filter((item) => item.name !== productID));
