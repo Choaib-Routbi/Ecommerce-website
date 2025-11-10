@@ -1,17 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../loginANDsignup.css";
 import { NavLink } from "react-router-dom";
 import { signUp } from "../auth/authServices";
 import { saveUserData } from "../auth/userData";
+import { getUserData } from "../auth/userData";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { SharedUserData } from "../sharedUserData";
 
 const SignupPage = () => {
+  const { fullname , setFullname , emaill, setEmaill,phone , setPhone, address , setAddress } = useContext(SharedUserData)
+
   const navigate = useNavigate();
   const [form, setForm] = useState({
     fullname: "",
-    email: "",
     phone: "",
+    email: "",
+    address: "",
     password: "",
   });
 
@@ -26,18 +31,24 @@ const SignupPage = () => {
     const uid = userCredential.user.uid;
 
     await saveUserData(uid, {
-      name: form.fullname,
+      fullname: form.fullname,
       phone: form.phone,
       email: form.email,
+      address: form.address,
       password: form.password,
     });
+    console.log("fullname is : ",fullname);
+    
+    setFullname(form.fullname)
+    setPhone(form.phone)
+    setAddress(form.address)
+    setEmaill(form.email)
 
     alert("User registered successfully!");
-    setForm({ fullname: "", email: "", phone: "", password: "" });
+    setForm({ fullname: "", email: "", phone: "", password: "", address: "" });
 
     navigate("/login");
   };
-
   return (
     <div className="section signupPage">
       <form onSubmit={handleSubmit} className="signupForm">
@@ -77,6 +88,19 @@ const SignupPage = () => {
             type="email"
             placeholder="example@example.com"
             value={form.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="inputANDlabel-container">
+          <label htmlFor="email">address</label>
+          <input
+            name="address"
+            id="address"
+            className="form-btn"
+            type="text"
+            placeholder="casablanca, morocco"
+            value={form.address}
             onChange={handleChange}
             required
           />

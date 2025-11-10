@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../loginANDsignup.css";
 import { NavLink } from "react-router-dom";
 import { login } from "../auth/authServices";
 import { getUserData } from "../auth/userData";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { SharedUserData } from "../sharedUserData";
 
 const LoginPage = () => {
+  const { fullname , setFullname , emaill, setEmaill,phone , setPhone, address , setAddress } = useContext(SharedUserData)
+  
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -20,7 +23,11 @@ const LoginPage = () => {
       const userCredential = await login(email, password);
       const uid = userCredential.user.uid;
       const userData = await getUserData(uid);
-      alert(`Welcome ${userData?.name || "User"} !`);
+      alert(`Welcome ${userData?.fullname || "User"} !`);
+      setFullname(userData.fullname)
+      setEmaill(userData.emaill)
+      setPhone(userData.phone)
+      setAddress(userData.address)
       navigate("/home");
     } catch (err) {
       console.log("errrrror", err);

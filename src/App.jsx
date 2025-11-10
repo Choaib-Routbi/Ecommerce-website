@@ -16,9 +16,15 @@ import SigninPage from "./pages/signupPage";
 
 import { AuthProvider } from "./userContext";
 import ProtectedRoute from "./protectRoute";
+import { SharedUserData } from "./sharedUserData";
 
 function App() {
+  const [fullname , setFullname] = useState("")
+  const [emaill , setEmaill] = useState("")
+  const [phone , setPhone] = useState("")
+  const [address , setAddress] = useState("")
   return (
+    <SharedUserData.Provider value={{fullname, setFullname, emaill, setEmaill, phone, setPhone, address, setAddress}}>
     <AuthProvider>
       <CartCountProvider>
         <div className="app-container">
@@ -51,6 +57,7 @@ function App() {
         </div>
       </CartCountProvider>
     </AuthProvider>
+    </SharedUserData.Provider>
   );
 }
 
