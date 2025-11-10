@@ -7,8 +7,10 @@ const Profile = () => {
   const { user, logout } = useAuth();
   const { fullname , setFullname , emaill, setEmaill,phone , setPhone, address , setAddress } = useContext(SharedUserData)
 
+  const userId = user?.uid || "guest";
 
 
+ 
   return (
     <div className="section profile">
       <div className="profile-container">

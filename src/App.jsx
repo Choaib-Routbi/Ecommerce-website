@@ -19,10 +19,23 @@ import ProtectedRoute from "./protectRoute";
 import { SharedUserData } from "./sharedUserData";
 
 function App() {
-  const [fullname , setFullname] = useState("")
-  const [emaill , setEmaill] = useState("")
-  const [phone , setPhone] = useState("")
-  const [address , setAddress] = useState("")
+  const [fullname , setFullname] = useState(()=>localStorage.getItem("fullname") || "") 
+  const [emaill , setEmaill] = useState(()=>localStorage.getItem("emaill") || "")
+  const [phone , setPhone] = useState(()=>localStorage.getItem("phone") || "")
+  const [address , setAddress] = useState(()=>localStorage.getItem("address") || "")
+
+  useEffect(()=>{
+    localStorage.setItem("fullname",fullname)
+  },[fullname])
+  useEffect(()=>{
+    localStorage.setItem("emaill",emaill)
+  },[emaill])
+  useEffect(()=>{
+    localStorage.setItem("phone",phone)
+  },[phone])
+  useEffect(()=>{
+    localStorage.setItem("address",address)
+  },[address])
   return (
     <SharedUserData.Provider value={{fullname, setFullname, emaill, setEmaill, phone, setPhone, address, setAddress}}>
     <AuthProvider>
