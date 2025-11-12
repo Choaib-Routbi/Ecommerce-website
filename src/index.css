@@ -7,6 +7,7 @@
   --main-background: #21283094;
   --error: rgb(211, 67, 23);
   --errorHover: rgb(228, 81, 36);
+  --hoverBtnLight: #464d5594;
 }
 a:-webkit-any-link {
   text-decoration: none;
@@ -872,7 +873,7 @@ body {
           font-family: "Saira",
             sans-serif;
           font-weight: 600;
-          font-size: clamp(0.8rem, 1rem,1rem );
+          font-size: clamp(0.8rem, 1.2rem,1.2rem );
           margin: 0%;
         }
       }
@@ -886,13 +887,23 @@ body {
             sans-serif;
           overflow-x: hidden;
           text-wrap-mode: nowrap;
-            svg {
-              height: 15px;
-              width: 15px;
-              fill: aliceblue;
-              margin-right: 5px;
-            }
+          cursor: pointer;
+          padding: 0px 5px;
+          box-sizing: border-box;
+          transition: all ease 0.1s;
+          border-radius: 5px;
+          svg {
+            height: 15px;
+            width: 15px;
+            fill: aliceblue;
+            margin-right: 5px;
+          }
         }
+        .profile-nav-item:hover {
+            background-color: var(--hoverBtnLight);
+          }
+        .profile-nav-item:active {
+transform: scale(0.9);          }
       }
       .profile-logout{
         /* border: solid green; */
