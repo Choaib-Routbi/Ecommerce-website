@@ -954,8 +954,15 @@ body {
       .profile-section {
         height: 100%;
         color: aliceblue;
-        padding: 10px;
+        padding: 10px;  
         margin-bottom: 10px;
+        .profile-section-title{
+          font-size: 1.2rem;
+          font-family: "Saira",
+            sans-serif;
+          font-weight: 700;
+          text-transform: capitalize;
+        }
       }
     }
   }

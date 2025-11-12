@@ -16,6 +16,58 @@ const Profile = () => {
     setAddress,
   } = useContext(SharedUserData);
 
+  const ProfileInfo = ()=>{
+    return <>
+    <div id="profile-info" className="profile-section">
+      <span className="profile-section-title">Profile Info</span>
+        <p className="profile-section-subtitle">Information</p>
+      <div>
+        <span>fullname : {fullname} </span><br/>
+        <span>email : {emaill} </span><br/>
+        <span>phone : {phone} </span><br/>
+        <span>address : {address} </span>
+      </div>
+        <p className="profile-section-subtitle">Account Settings</p>
+      <div>
+
+      </div>
+        <p className="profile-section-subtitle">Preferences</p>
+      <div></div>
+        <p className="profile-section-subtitle">Account Status</p>
+      <div></div>
+            </div>
+    </>
+  }
+  const Addresses = ()=>{
+    return <div id="addresses" className="profile-section">
+            <span className="profile-section-title">Addresses</span>
+            </div>
+  }
+  const Payment = ()=>{
+    return <div id="payment-methods" className="profile-section">
+            <span className="profile-section-title">payment-methods</span>
+            </div>
+  }
+  const Orders = ()=>{
+    return <div id="orders" className="profile-section">
+            <span className="profile-section-title">orders</span>
+            </div>
+  }
+  const Wishlist = ()=>{
+    return <div id="wishlist" className="profile-section">
+            <span className="profile-section-title">wishlist</span>
+            </div>
+  }
+  const History = ()=>{
+    return <div id="history" className="profile-section">
+            <span className="profile-section-title">history</span>
+            </div>
+  }
+  const Security = ()=>{
+    return <div id="security" className="profile-section">
+            <span className="profile-section-title">security</span>
+            </div>
+  }
   const userId = user?.uid || "guest";
 
   return (
@@ -140,27 +192,13 @@ const Profile = () => {
             </div>
           </div>
           <div className="account-container-right">
-            <div id="profile-info" className="profile-section">
-              profile info
-            </div>
-            <div id="addresses" className="profile-section">
-              addresses
-            </div>
-            <div id="payment-methods" className="profile-section">
-              payment methods
-            </div>
-            <div id="orders" className="profile-section">
-              orders
-            </div>
-            <div id="wishlist" className="profile-section">
-              wishlist
-            </div>
-            <div id="history" className="profile-section">
-              history
-            </div>
-            <div id="security" className="profile-section">
-              security
-            </div>
+              <ProfileInfo/>
+              <Addresses/>addresses
+              <Payment/>payment methods
+              <Orders/>orders
+              <Wishlist/>wishlist
+              <History/>history
+              <Security/>security
           </div>
         </div>
       </div>
