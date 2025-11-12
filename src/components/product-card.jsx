@@ -46,7 +46,7 @@ const ProductCard = ({
     sales,
   };
 
-  const [ , setDummyStat] = useState("0")
+  const [, setDummyStat] = useState("0");
   const inCart = isInCart(product.name);
 
   const { user } = useAuth();
@@ -57,21 +57,20 @@ const ProductCard = ({
       console.log("to login");
       navigate("/login");
       return;
-    }else{
-      null
+    } else {
+      null;
     }
 
     if (inCart) {
       REMOVEtotalPriceCount(product.price);
       removeFromCart(product.name);
     } else {
-        
-        ADDtotalPriceCount(product.price);
-        addToCart(product);
-        setDummyStat("1")
+      ADDtotalPriceCount(product.price);
+      addToCart(product);
+      setDummyStat("1");
       // window.location.reload()
     }
-  }
+  };
 
   return (
     <div className="product-card">

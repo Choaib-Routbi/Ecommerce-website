@@ -8,8 +8,17 @@ import { useNavigate } from "react-router-dom";
 import { SharedUserData } from "../sharedUserData";
 
 const LoginPage = () => {
-  const { fullname , setFullname , emaill, setEmaill,phone , setPhone, address , setAddress } = useContext(SharedUserData)
-  
+  const {
+    fullname,
+    setFullname,
+    emaill,
+    setEmaill,
+    phone,
+    setPhone,
+    address,
+    setAddress,
+  } = useContext(SharedUserData);
+
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -24,10 +33,10 @@ const LoginPage = () => {
       const uid = userCredential.user.uid;
       const userData = await getUserData(uid);
       alert(`Welcome ${userData?.fullname || "User"} !`);
-      setFullname(userData.fullname)
-      setEmaill(userData.emaill)
-      setPhone(userData.phone)
-      setAddress(userData.address)
+      setFullname(userData.fullname);
+      setEmaill(userData.emaill);
+      setPhone(userData.phone);
+      setAddress(userData.address);
       navigate("/home");
     } catch (err) {
       console.log("errrrror", err);

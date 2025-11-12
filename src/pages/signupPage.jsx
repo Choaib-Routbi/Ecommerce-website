@@ -9,7 +9,16 @@ import { useNavigate } from "react-router-dom";
 import { SharedUserData } from "../sharedUserData";
 
 const SignupPage = () => {
-  const { fullname , setFullname , emaill, setEmaill,phone , setPhone, address , setAddress } = useContext(SharedUserData)
+  const {
+    fullname,
+    setFullname,
+    emaill,
+    setEmaill,
+    phone,
+    setPhone,
+    address,
+    setAddress,
+  } = useContext(SharedUserData);
 
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -37,12 +46,12 @@ const SignupPage = () => {
       address: form.address,
       password: form.password,
     });
-    console.log("fullname is : ",fullname);
-    
-    setFullname(form.fullname)
-    setPhone(form.phone)
-    setAddress(form.address)
-    setEmaill(form.email)
+    console.log("fullname is : ", fullname);
+
+    setFullname(form.fullname);
+    setPhone(form.phone);
+    setAddress(form.address);
+    setEmaill(form.email);
 
     alert("User registered successfully!");
     setForm({ fullname: "", email: "", phone: "", password: "", address: "" });

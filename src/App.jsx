@@ -19,57 +19,74 @@ import ProtectedRoute from "./protectRoute";
 import { SharedUserData } from "./sharedUserData";
 
 function App() {
-  const [fullname , setFullname] = useState(()=>localStorage.getItem("fullname") || "") 
-  const [emaill , setEmaill] = useState(()=>localStorage.getItem("emaill") || "")
-  const [phone , setPhone] = useState(()=>localStorage.getItem("phone") || "")
-  const [address , setAddress] = useState(()=>localStorage.getItem("address") || "")
+  const [fullname, setFullname] = useState(
+    () => localStorage.getItem("fullname") || ""
+  );
+  const [emaill, setEmaill] = useState(
+    () => localStorage.getItem("emaill") || ""
+  );
+  const [phone, setPhone] = useState(() => localStorage.getItem("phone") || "");
+  const [address, setAddress] = useState(
+    () => localStorage.getItem("address") || ""
+  );
 
-  useEffect(()=>{
-    localStorage.setItem("fullname",fullname)
-  },[fullname])
-  useEffect(()=>{
-    localStorage.setItem("emaill",emaill)
-  },[emaill])
-  useEffect(()=>{
-    localStorage.setItem("phone",phone)
-  },[phone])
-  useEffect(()=>{
-    localStorage.setItem("address",address)
-  },[address])
+  useEffect(() => {
+    localStorage.setItem("fullname", fullname);
+  }, [fullname]);
+  useEffect(() => {
+    localStorage.setItem("emaill", emaill);
+  }, [emaill]);
+  useEffect(() => {
+    localStorage.setItem("phone", phone);
+  }, [phone]);
+  useEffect(() => {
+    localStorage.setItem("address", address);
+  }, [address]);
   return (
-    <SharedUserData.Provider value={{fullname, setFullname, emaill, setEmaill, phone, setPhone, address, setAddress}}>
-    <AuthProvider>
-      <CartCountProvider>
-        <div className="app-container">
-          <Navbar />
-          <Routes>
-            <Route path="*" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/collections" element={<Collections />} />
-            <Route path="/popular" element={<Popular />} />
-            <Route path="/about" element={<About />} />
-            <Route
-              path="/cart"
-              element={
-                <ProtectedRoute>
-                  <Cart />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/profile"
-              element={
-                <ProtectedRoute>
-                  <Profile />
-                </ProtectedRoute>
-              }
-            />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/signup" element={<SigninPage />} />
-          </Routes>
-        </div>
-      </CartCountProvider>
-    </AuthProvider>
+    <SharedUserData.Provider
+      value={{
+        fullname,
+        setFullname,
+        emaill,
+        setEmaill,
+        phone,
+        setPhone,
+        address,
+        setAddress,
+      }}
+    >
+      <AuthProvider>
+        <CartCountProvider>
+          <div className="app-container">
+            <Navbar />
+            <Routes>
+              <Route path="*" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/collections" element={<Collections />} />
+              <Route path="/popular" element={<Popular />} />
+              <Route path="/about" element={<About />} />
+              <Route
+                path="/cart"
+                element={
+                  <ProtectedRoute>
+                    <Cart />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/profile"
+                element={
+                  <ProtectedRoute>
+                    <Profile />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/signup" element={<SigninPage />} />
+            </Routes>
+          </div>
+        </CartCountProvider>
+      </AuthProvider>
     </SharedUserData.Provider>
   );
 }

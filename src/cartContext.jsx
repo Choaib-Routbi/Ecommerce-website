@@ -20,7 +20,7 @@ export function CartCountProvider({ children }) {
 
   useEffect(() => {
     if (!user) return;
-    
+
     const cartRef = doc(db, "carts", user.uid);
 
     const loadAndSyncCart = async () => {
@@ -82,7 +82,6 @@ export function CartCountProvider({ children }) {
     console.log(safeItems);
 
     setDoc(
-
       cartRef,
       { items: safeItems, totalPrice: safeTotal },
       { merge: true }
@@ -97,21 +96,20 @@ export function CartCountProvider({ children }) {
     setTotalPrice((prev) => prev - price);
   };
 
-const addToCart = (product) => {
-  // remove undefined values from the product
-  const cleanedProduct = Object.fromEntries(
-    Object.entries(product).filter(([_, v]) => v !== undefined)
-  );
+  const addToCart = (product) => {
+    // remove undefined values from the product
+    const cleanedProduct = Object.fromEntries(
+      Object.entries(product).filter(([_, v]) => v !== undefined)
+    );
 
-  setIncartItems((prev) => {
-    const exists = prev.find((item) => item.name === cleanedProduct.name);
-    if (exists) return prev;
-    return [...prev, cleanedProduct];
-  });
+    setIncartItems((prev) => {
+      const exists = prev.find((item) => item.name === cleanedProduct.name);
+      if (exists) return prev;
+      return [...prev, cleanedProduct];
+    });
 
-  console.log("added");
-};
-
+    console.log("added");
+  };
 
   // const addToCart = (product) => {
   //   setIncartItems((prev) => {

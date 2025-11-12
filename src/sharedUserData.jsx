@@ -1,3 +1,3 @@
-import React, {createContext, useContext} from "react";
+import React, { createContext, useContext } from "react";
 
-export const SharedUserData = createContext()
+export const SharedUserData = createContext();

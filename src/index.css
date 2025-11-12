@@ -835,12 +835,12 @@ body {
   color: aliceblue;
   box-sizing: border-box;
   overflow: hidden;
-  .profile-container-content{
+  .profile-container-content {
     width: 100%;
     height: 100%;
     display: flex;
     column-gap: 10px;
-    .profile-container-left{
+    .profile-container-left {
       overflow-wrap: break-word;
       min-width: fit-content;
       max-width: 17%;
@@ -849,9 +849,9 @@ body {
       padding: 10px 20px;
       background-color: #303a378c;
       display: grid;
-      grid-template-rows: repeat(3,auto);
-      
-      .profile-picture{
+      grid-template-rows: repeat(3, auto);
+
+      .profile-picture {
         display: grid;
         row-gap: 20px;
         justify-content: center;
@@ -868,23 +868,21 @@ body {
           background-color: var(--primary-color);
           border: solid 2px var(--main-background);
         }
-        p{
+        p {
           text-align: center;
-          font-family: "Saira",
-            sans-serif;
+          font-family: "Saira", sans-serif;
           font-weight: 600;
-          font-size: clamp(0.8rem, 1.2rem,1.2rem );
+          font-size: clamp(0.8rem, 1.2rem, 1.2rem);
           margin: 0%;
         }
       }
-      .profile-nav{
-        translate: 0px -70px ;
-        .profile-nav-item{
+      .profile-nav {
+        translate: 0px -70px;
+        .profile-nav-item {
           margin-bottom: 10px;
           display: flex;
           align-items: center;
-          font-family: "Saira",
-            sans-serif;
+          font-family: "Saira", sans-serif;
           overflow-x: hidden;
           text-wrap-mode: nowrap;
           cursor: pointer;
@@ -900,24 +898,24 @@ body {
           }
         }
         .profile-nav-item:hover {
-            background-color: var(--hoverBtnLight);
-          }
+          background-color: var(--hoverBtnLight);
+        }
         .profile-nav-item:active {
-            transform: scale(0.9);          }
+          transform: scale(0.9);
+        }
         a {
-                  text-decoration: none;
-                  color: aliceblue;
-                  font-family: "Saira",
-                    sans-serif;
-                }
+          text-decoration: none;
+          color: aliceblue;
+          font-family: "Saira", sans-serif;
+        }
       }
-      .profile-logout{
+      .profile-logout {
         /* border: solid green; */
-        
+
         display: grid;
         align-items: end;
-        button{
-          background-color: var(--error) ;
+        button {
+          background-color: var(--error);
           color: aliceblue;
           outline: none;
           border: none;
@@ -927,39 +925,39 @@ body {
           cursor: pointer;
           width: 100%;
         }
-        button:hover{
+        button:hover {
           background-color: var(--errorHover);
         }
-        button:active{
+        button:active {
           transform: scale(0.9);
         }
-        span{
+        span {
           text-align: center;
           text-align: center;
           font-size: 0.6rem;
           font-weight: 200;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         }
       }
     }
-        .account-container-right::-webkit-scrollbar{
-          background-color: transparent;
-          width: 3px;
-          display: none;
-        }
-        .account-container-right {
-          width: 100%;
-          height: 100%;
-          overflow-y: scroll;
-            color: aliceblue;
-          
-          .profile-section {
-            height: 100%;
-            color: aliceblue;
-            padding: 10px;
-            margin-bottom: 10px;
-          }
-        }
+    .account-container-right::-webkit-scrollbar {
+      background-color: transparent;
+      width: 3px;
+      display: none;
+    }
+    .account-container-right {
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+      color: aliceblue;
+
+      .profile-section {
+        height: 100%;
+        color: aliceblue;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+    }
   }
 }
 @media (max-width: 700px) {
