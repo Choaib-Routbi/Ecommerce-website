@@ -834,17 +834,16 @@ body {
   /* ------adjust-bg------- */
   color: aliceblue;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow: hidden;
   .profile-container-content{
     width: 100%;
     height: 100%;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    column-gap: 30px;
+    display: flex;
+    column-gap: 10px;
     .profile-container-left{
       overflow-wrap: break-word;
       min-width: fit-content;
-      max-width: 20%;
+      max-width: 17%;
       overflow: hidden;
       border-radius: 5px;
       padding: 10px 20px;
@@ -858,15 +857,16 @@ body {
         justify-content: center;
         height: fit-content;
         .picture {
-
           margin-top: 10px;
           grid-row: span 1;
           width: 100%;
-          min-width: 100px;
+          min-width: 110px;
           max-width: 180px;
           aspect-ratio: 1 / 1;
           border-radius: 50%;
+          box-sizing: border-box;
           background-color: var(--primary-color);
+          border: solid 2px var(--main-background);
         }
         p{
           text-align: center;
@@ -903,7 +903,13 @@ body {
             background-color: var(--hoverBtnLight);
           }
         .profile-nav-item:active {
-transform: scale(0.9);          }
+            transform: scale(0.9);          }
+        a {
+                  text-decoration: none;
+                  color: aliceblue;
+                  font-family: "Saira",
+                    sans-serif;
+                }
       }
       .profile-logout{
         /* border: solid green; */
@@ -936,10 +942,24 @@ transform: scale(0.9);          }
         }
       }
     }
-    .profile-container-right{
-      width: 100%;
-      grid-column: span 2;
-    }
+        .account-container-right::-webkit-scrollbar{
+          background-color: transparent;
+          width: 3px;
+          display: none;
+        }
+        .account-container-right {
+          width: 100%;
+          height: 100%;
+          overflow-y: scroll;
+            color: aliceblue;
+          
+          .profile-section {
+            height: 100%;
+            color: aliceblue;
+            padding: 10px;
+            margin-bottom: 10px;
+          }
+        }
   }
 }
 @media (max-width: 700px) {
