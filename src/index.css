@@ -769,6 +769,7 @@ body {
           display: grid;
           grid-template-columns: repeat(2, auto);
           column-gap: 10px;
+          justify-content: start;
           .card-infos {
             height: 100%;
             width: 100%;
@@ -779,6 +780,7 @@ body {
             grid-row: span 1;
             overflow: hidden;
             height: 120px;
+            width: 120px;
           }
         }
       }
@@ -868,7 +870,7 @@ body {
           background-color: var(--primary-color);
           border: solid 2px var(--main-background);
         }
-        p {
+        .profile-name {
           text-align: center;
           font-family: "Saira", sans-serif;
           font-weight: 600;
@@ -895,6 +897,14 @@ body {
             width: 15px;
             fill: aliceblue;
             margin-right: 5px;
+          }
+          .logout-svg {
+            display: none;
+            height: 15px;
+            width: 15px;
+            fill: aliceblue;
+            margin-right: 5px;
+            margin-bottom: 100px;
           }
         }
         .profile-nav-item:hover {
@@ -952,16 +962,31 @@ body {
       color: aliceblue;
 
       .profile-section {
+        display: flex;
+        flex-direction: column;
         height: 100%;
         color: aliceblue;
-        padding: 10px;  
+        padding: 10px;
         margin-bottom: 10px;
-        .profile-section-title{
+        .profile-section-title {
           font-size: 1.2rem;
-          font-family: "Saira",
-            sans-serif;
+          font-family: "Saira", sans-serif;
           font-weight: 700;
           text-transform: capitalize;
+        }
+        .profile-subsection-title{
+          font-size: 0.8rem;
+          color: #c1c1c1; 
+        }
+        .profile-subsection{
+          /* background-color: var(--hoverBtnLight); */
+          height: 100%;
+          width: 100%;
+        }
+        .Information{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
       }
     }
@@ -1090,7 +1115,62 @@ body {
             height: fit-content;
             .card-img {
               height: 90px;
+              width: 90px;
             }
+            .card-infos {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .profile-container {
+    .profile-container-content {
+      .profile-container-left {
+        width: fit-content;
+        max-width: 10%;
+        padding: 10px 0px;
+        .profile-picture {
+          .picture {
+            min-width: 22px;
+            max-width: 15px;
+            border: none;
+          }
+          .profile-name {
+            display: none;
+          }
+        }
+        .profile-nav {
+          display: grid;
+          align-items: center;
+          justify-items: center;
+          translate: 0px -200px;
+          height: fit-content;
+          a{
+            height: 30px;
+            width: 30px;
+            svg{
+              height: 100%;
+              width: fit-content;
+            }
+          }
+          .profile-nav-item {
+            span {
+              display: none;
+            }
+            .logout-svg {
+              display: block;
+              height: fit-content;
+            }
+          }
+        }
+        .profile-logout {
+          button {
+            display: none;
+          }
+          span {
+            display: none;
           }
         }
       }
