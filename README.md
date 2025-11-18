@@ -1,6 +1,6 @@
 # Ecommerce Website
 
-A minimal starter e‑commerce front-end template with product listing and cart UI.
+An e‑commerce react-app with multiple features including : product listing, product details, cart management, product filtering and sorting, user authentication with firebase integration.
 
 ## Technologies
 
