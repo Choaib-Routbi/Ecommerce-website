@@ -32,9 +32,7 @@ const Profile = () => {
             <span>address : {address} </span>
           </div>
           <p className="profile-subsection-title">Account Settings</p>
-          <div className="profile-subsection Account-Settings">
-              
-          </div>
+          <div className="profile-subsection Account-Settings"></div>
           <p className="profile-subsection-title">Preferences</p>
           <div className="profile-subsection Preferences"></div>
           <p className="profile-subsection-title">Account Status</p>
@@ -116,7 +114,7 @@ const Profile = () => {
               </div>
               <div className="profile-address">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc<path d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/></svg>
-              {
+              { 
                 address
               } */}
               </>
@@ -204,20 +202,20 @@ const Profile = () => {
                   <span>security</span>
                 </div>
               </a>
-              <a>    
-              <div className="profile-nav-item">
-                <svg
-                  className="logout-svg"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 640 640"
-                >
-                  Font Awesome Free v7.1.0 by @fontawesome -
-                  https://fontawesome.com License -
-                  https://fontawesome.com/license/free Copyright 2025 Fonticons,
-                  Inc
-                  <path d="M569 337C578.4 327.6 578.4 312.4 569 303.1L425 159C418.1 152.1 407.8 150.1 398.8 153.8C389.8 157.5 384 166.3 384 176L384 256L272 256C245.5 256 224 277.5 224 304L224 336C224 362.5 245.5 384 272 384L384 384L384 464C384 473.7 389.8 482.5 398.8 486.2C407.8 489.9 418.1 487.9 425 481L569 337zM224 160C241.7 160 256 145.7 256 128C256 110.3 241.7 96 224 96L160 96C107 96 64 139 64 192L64 448C64 501 107 544 160 544L224 544C241.7 544 256 529.7 256 512C256 494.3 241.7 480 224 480L160 480C142.3 480 128 465.7 128 448L128 192C128 174.3 142.3 160 160 160L224 160z" />
-                </svg>
-              </div>
+              <a>
+                <div className="profile-nav-item">
+                  <svg
+                    className="logout-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 640 640"
+                  >
+                    Font Awesome Free v7.1.0 by @fontawesome -
+                    https://fontawesome.com License -
+                    https://fontawesome.com/license/free Copyright 2025
+                    Fonticons, Inc
+                    <path d="M569 337C578.4 327.6 578.4 312.4 569 303.1L425 159C418.1 152.1 407.8 150.1 398.8 153.8C389.8 157.5 384 166.3 384 176L384 256L272 256C245.5 256 224 277.5 224 304L224 336C224 362.5 245.5 384 272 384L384 384L384 464C384 473.7 389.8 482.5 398.8 486.2C407.8 489.9 418.1 487.9 425 481L569 337zM224 160C241.7 160 256 145.7 256 128C256 110.3 241.7 96 224 96L160 96C107 96 64 139 64 192L64 448C64 501 107 544 160 544L224 544C241.7 544 256 529.7 256 512C256 494.3 241.7 480 224 480L160 480C142.3 480 128 465.7 128 448L128 192C128 174.3 142.3 160 160 160L224 160z" />
+                  </svg>
+                </div>
               </a>
             </div>
             <div className="profile-logout">
@@ -229,17 +227,16 @@ const Profile = () => {
             <ProfileInfo />
 
             <Addresses />
-            
+
             <Payment />
-            
+
             <Orders />
-            
+
             <Wishlist />
-            
+
             <History />
-            
+
             <Security />
-            
           </div>
         </div>
       </div>
