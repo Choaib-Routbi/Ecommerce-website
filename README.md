@@ -19,7 +19,7 @@ A minimal starter e‑commerce front-end template with product listing and cart 
    ```
 2. Run dev server
    ```
-   npm start
+   npm run dev
    ```
 
 ## Notes
