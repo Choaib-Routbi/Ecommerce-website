@@ -33,7 +33,7 @@ const Profile = () => {
           </div>
           <p className="profile-subsection-title">Account Settings</p>
           <div className="profile-subsection Account-Settings">
-            
+              
           </div>
           <p className="profile-subsection-title">Preferences</p>
           <div className="profile-subsection Preferences"></div>
