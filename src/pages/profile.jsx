@@ -84,7 +84,7 @@ const Profile = () => {
         </div>
       </>
     );
-  };
+  }; 
   const AddressCard = ({ adrs_title }) => {
     return (
       <div className="profile-addresses-card">
