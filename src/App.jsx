@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, us } from "react";
 import { CartCountProvider } from "./cartContext";
 import { BrowserRouter as Router, Routes, Route, data } from "react-router-dom";
 import "./index.css";

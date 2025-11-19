@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { cartContext } from "../cartContext";
-import { useEffect } from "react";
 import { useAuth } from "../userContext";
 import { useNavigate } from "react-router-dom";
 
@@ -23,7 +22,6 @@ const ProductCard = ({
   const inCartFALSE = "add to cart";
   const inCartFALSE_class = "card-addtocartBtn";
   const {
-    updateCount,
     addToCart,
     removeFromCart,
     isInCart,
@@ -94,9 +92,6 @@ const ProductCard = ({
                 </span>
               </div>
             </div>
-            {/* <div className="card-product-createdAt">
-              {createdAt} 
-            </div> */}
             <div className="card-product-name">
               {name == null ? "product name" : name}
             </div>
