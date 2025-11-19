@@ -85,33 +85,44 @@ const Profile = () => {
       </>
     );
   };
-  const AddressCard = ({adrs_title})=>{
-    return <div className="profile-addresses-card">
-            <span className="profile-addresses-card-title">{adrs_title}</span>
-            <div className="profile-addresses-card-location"></div>
-            <button>
-              active
-            </button>
+  const AddressCard = ({ adrs_title }) => {
+    return (
+      <div className="profile-addresses-card">
+        <span className="profile-addresses-card-title">{adrs_title}</span>
+        <div className="profile-addresses-card-location">
+          <div style={{ width: "100%", height: "400px" }}>
+            <iframe
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              src="https://www.google.com/maps/embed?pb=YOUR_EMBED_LINK"
+            ></iframe>
           </div>
-  }
+        </div>
+        <button>active</button>
+      </div>
+    );
+  };
   const Addresses = () => {
     return (
       <div id="addresses" className="profile-section">
         <span className="profile-section-title">Shipping Addresses</span>
-        <div className="profile-addresses-cards-container">
-          <AddressCard adrs_title={"home"}/>
-          <AddressCard adrs_title={"work"}/>
-          <AddressCard adrs_title={"work"}/>
-          <AddressCard adrs_title={"work"}/>
-          <AddressCard adrs_title={"work"}/>
-          <AddressCard adrs_title={"work"}/>
+        <div className="profile-addresses-card-CREATE">
+          <span className="profile-addresses-card-title">
+            add new shipping location to profile
+          </span>
+          <button>Add Location</button>
         </div>
-          <div className="profile-addresses-card-CREATE">
-            <span className="profile-addresses-card-title">add new shipping location to profile</span>
-            <button>
-              Add Location
-            </button>
-          </div>
+        <div className="profile-addresses-cards-container">
+          <AddressCard adrs_title={"home"} />
+          <AddressCard adrs_title={"work"} />
+          <AddressCard adrs_title={"work"} />
+          <AddressCard adrs_title={"work"} />
+          <AddressCard adrs_title={"work"} />
+          <AddressCard adrs_title={"work"} />
+        </div>
       </div>
     );
   };
