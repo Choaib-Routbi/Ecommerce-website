@@ -971,9 +971,12 @@ body {
           display: flex;
           gap: 20px;
           padding-bottom: 20px;
+          justify-items: center;
+          flex-wrap: wrap;
           .profile-addresses-card{  
             height: 230px;
-            width: 100%;
+            min-width: 200px;
+            max-width: 300px;
             padding: 15px;
             background-color: #303a378c;
             border-radius: 5px;
@@ -983,6 +986,7 @@ body {
             justify-content: space-evenly;
             align-items: center;
             gap: 10px;
+            flex: 1 1 auto;
           }
           
           .profile-addresses-card-location{
@@ -1034,7 +1038,8 @@ body {
                   gap: 20px;
                   button {
                     height: 35px;
-                    width: 20%;
+                    width: fit-content;
+                    padding: 0px 30px;
                     color: aliceblue;
                     background: var(--primary-color);
                     border: none;
@@ -1052,9 +1057,7 @@ body {
                     button:active {
                       scale: 0.9;
                     }
-                    button:focus {
-                       background: var(--hoverBtnLight);
-                    }
+                    
                 }
         .profile-section-title {
           font-size: 1.2rem;
@@ -1221,6 +1224,7 @@ body {
     }
   }
   .profile-container {
+    padding: 10px 5px;
     .profile-container-content {
       .profile-container-left {
         width: fit-content;
@@ -1240,7 +1244,7 @@ body {
           display: grid;
           align-items: center;
           justify-items: center;
-          translate: 0px -200px;
+          translate: 0px -70px;
           height: fit-content;
           a{
             height: 30px;

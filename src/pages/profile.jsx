@@ -85,32 +85,26 @@ const Profile = () => {
       </>
     );
   };
+  const AddressCard = ({adrs_title})=>{
+    return <div className="profile-addresses-card">
+            <span className="profile-addresses-card-title">{adrs_title}</span>
+            <div className="profile-addresses-card-location"></div>
+            <button>
+              active
+            </button>
+          </div>
+  }
   const Addresses = () => {
     return (
       <div id="addresses" className="profile-section">
         <span className="profile-section-title">Shipping Addresses</span>
         <div className="profile-addresses-cards-container">
-          <div className="profile-addresses-card">
-            <span className="profile-addresses-card-title">home shipping address</span>
-            <div className="profile-addresses-card-location"></div>
-            <button>
-              active
-            </button>
-          </div>
-          <div className="profile-addresses-card">
-            <span className="profile-addresses-card-title">home shipping address</span>
-            <div className="profile-addresses-card-location"></div>
-            <button>
-              active
-            </button>
-          </div>
-          <div className="profile-addresses-card">
-            <span className="profile-addresses-card-title">home shipping address</span>
-            <div className="profile-addresses-card-location"></div>
-            <button>
-              active
-            </button>
-          </div>
+          <AddressCard adrs_title={"home"}/>
+          <AddressCard adrs_title={"work"}/>
+          <AddressCard adrs_title={"work"}/>
+          <AddressCard adrs_title={"work"}/>
+          <AddressCard adrs_title={"work"}/>
+          <AddressCard adrs_title={"work"}/>
         </div>
           <div className="profile-addresses-card-CREATE">
             <span className="profile-addresses-card-title">add new shipping location to profile</span>
