@@ -6,7 +6,7 @@ import { saveUserData } from "../auth/userData";
 import { getUserData } from "../auth/userData";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import { SharedUserData } from "../sharedUserData";
+import { SharedData } from "../sharedData";
 
 const SignupPage = () => {
   const {
@@ -18,7 +18,7 @@ const SignupPage = () => {
     setPhone,
     address,
     setAddress,
-  } = useContext(SharedUserData);
+  } = useContext(SharedData);
 
   const navigate = useNavigate();
   const [form, setForm] = useState({

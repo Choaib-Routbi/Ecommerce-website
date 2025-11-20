@@ -5,7 +5,7 @@ import { login } from "../auth/authServices";
 import { getUserData } from "../auth/userData";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import { SharedUserData } from "../sharedUserData";
+import { SharedData } from "../sharedData";
 
 const LoginPage = () => {
   const {
@@ -17,7 +17,7 @@ const LoginPage = () => {
     setPhone,
     address,
     setAddress,
-  } = useContext(SharedUserData);
+  } = useContext(SharedData);
 
   const navigate = useNavigate();
 

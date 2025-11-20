@@ -1,11 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useAuth } from "../userContext";
-import { SharedUserData } from "../sharedUserData";
+import { SharedData } from "../sharedData";
 import { NavLink } from "react-router-dom";
+
+import ProfileInfo from "./profile_sections/ProfileInfo.jsx";
+import Payment from "./profile_sections/Payment.jsx";
+import Addresses from "./profile_sections/Addresses.jsx";
+import History from "./profile_sections/History.jsx";
+import Security from "./profile_sections/Security.jsx";
+import Wishlist from "./profile_sections/Wishlist.jsx";
+import Orders from "./profile_sections/Orders.jsx";
 
 const Profile = () => {
   const { user, logout } = useAuth();
-  const {
+  var {
     fullname,
     setFullname,
     emaill,
@@ -14,77 +22,18 @@ const Profile = () => {
     setPhone,
     address,
     setAddress,
-  } = useContext(SharedUserData);
+    displayNone,
+    setdisplay,
+  } = useContext(SharedData);
+  [displayNone, setdisplay] = useState(false);
 
-  const ProfileInfo = () => {
-    return (
-      <>
-        <div id="profile-info" className="profile-section">
-          <span className="profile-section-title">Profile Info</span>
-          <p className="profile-subsection-title">Information</p>
-          <div className="profile-subsection Information">
-            <span>
-              <span className="profile-prmtr">fullname :</span> {fullname}
-            </span>
-            <span>
-              <span className="profile-prmtr">email :</span> {emaill}
-            </span>
-            <span>
-              <span className="profile-prmtr">phone :</span> {phone}
-            </span>
-            <span>
-              <span className="profile-prmtr">address :</span> {address}
-            </span>
-          </div>
-          <p className="profile-subsection-title">Account Settings</p>
-          <div className="profile-subsection Account-Settings">
-            <span>
-              <span className="profile-prmtr">Password :</span>
-            </span>
-            <span>
-              <span className="profile-prmtr">Two-Factor Auth :</span>
-            </span>
-            <span>
-              <span className="profile-prmtr">Login Methods :</span>
-            </span>
-            <span>
-              <span className="profile-prmtr">Delete account :</span>
-            </span>
-          </div>
-          <p className="profile-subsection-title">Preferences</p>
-          <div className="profile-subsection Preferences">
-            <span>
-              <span className="profile-prmtr">Language :</span>
-            </span>
-            <span>
-              <span className="profile-prmtr">Currency :</span>
-            </span>
-            <span>
-              <span className="profile-prmtr">Theme :</span>
-            </span>
-            <span>
-              <span className="profile-prmtr">Notifications :</span>
-            </span>
-          </div>
-          <p className="profile-subsection-title">Account Status</p>
-          <div className="profile-subsection Account-Status">
-            <span>
-              <span className="profile-prmtr">Account Level :</span>
-            </span>
-            <span>
-              <span className="profile-prmtr">Reward Points :</span>
-            </span>
-            <span>
-              <span className="profile-prmtr">Order Summary :</span>
-            </span>
-            <span>
-              <span className="profile-prmtr">Created at :</span>
-            </span>
-          </div>
-        </div>
-      </>
-    );
-  }; 
+  const closeBox = () => {
+    setdisplay((prev) => !prev);
+    console.log(displayNone);
+  };
+
+  useEffect(() => {}, [displayNone]);
+
   const AddressCard = ({ adrs_title }) => {
     return (
       <div className="profile-addresses-card">
@@ -105,68 +54,23 @@ const Profile = () => {
       </div>
     );
   };
-  const Addresses = () => {
-    return (
-      <div id="addresses" className="profile-section">
-        <span className="profile-section-title">Shipping Addresses</span>
-        <div className="profile-addresses-card-CREATE">
-          <span className="profile-addresses-card-title">
-            add new shipping location to profile
-          </span>
-          <button>Add Location</button>
-        </div>
-        <div className="profile-addresses-cards-container">
-          <AddressCard adrs_title={"home"} />
-          <AddressCard adrs_title={"work"} />
-          <AddressCard adrs_title={"work"} />
-          <AddressCard adrs_title={"work"} />
-          <AddressCard adrs_title={"work"} />
-          <AddressCard adrs_title={"work"} />
-        </div>
-      </div>
-    );
-  };
-  const Payment = () => {
-    return (
-      <div id="payment-methods" className="profile-section">
-        <span className="profile-section-title">payment-methods</span>
-      </div>
-    );
-  };
-  const Orders = () => {
-    return (
-      <div id="orders" className="profile-section">
-        <span className="profile-section-title">orders</span>
-      </div>
-    );
-  };
-  const Wishlist = () => {
-    return (
-      <div id="wishlist" className="profile-section">
-        <span className="profile-section-title">wishlist</span>
-      </div>
-    );
-  };
-  const History = () => {
-    return (
-      <div id="history" className="profile-section">
-        <span className="profile-section-title">history</span>
-      </div>
-    );
-  };
-  const Security = () => {
-    return (
-      <div id="security" className="profile-section">
-        <span className="profile-section-title">security</span>
-      </div>
-    );
-  };
+
   const userId = user?.uid || "guest";
 
   return (
     <div className="section profile">
       <div className="profile-container">
-        <div className="profile-container-content">
+        <div onClick={closeBox} className="profile-container-content">
+          {displayNone && (
+            <div className="addLocation-container-holder">
+              <div className="addLocation-container">
+                <span className="addLocation-container-title">
+                  add shipping location
+                </span>
+              </div>
+            </div>
+          )}
+
           <div className="profile-container-left">
             <div className="profile-picture">
               <div className="picture"></div>

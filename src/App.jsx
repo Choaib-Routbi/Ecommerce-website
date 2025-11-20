@@ -16,7 +16,7 @@ import SigninPage from "./pages/signupPage";
 
 import { AuthProvider } from "./userContext";
 import ProtectedRoute from "./protectRoute";
-import { SharedUserData } from "./sharedUserData";
+import { SharedData } from "./sharedData";
 
 function App() {
   const [fullname, setFullname] = useState(
@@ -43,7 +43,7 @@ function App() {
     localStorage.setItem("address", address);
   }, [address]);
   return (
-    <SharedUserData.Provider
+    <SharedData.Provider
       value={{
         fullname,
         setFullname,
@@ -87,7 +87,7 @@ function App() {
           </div>
         </CartCountProvider>
       </AuthProvider>
-    </SharedUserData.Provider>
+    </SharedData.Provider>
   );
 }
 
