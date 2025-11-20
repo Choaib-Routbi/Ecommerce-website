@@ -60,7 +60,7 @@ const Profile = () => {
   return (
     <div className="section profile">
       <div className="profile-container">
-        <div onClick={closeBox} className="profile-container-content">
+        <div className="profile-container-content">
           {displayNone && (
             <div className="addLocation-container-holder">
               <div className="addLocation-container">
