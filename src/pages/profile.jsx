@@ -39,7 +39,12 @@ const Profile = () => {
       <div className="profile-addresses-card">
         <span className="profile-addresses-card-title">{adrs_title}</span>
         <div className="profile-addresses-card-location">
-          <div style={{ width: "100%", height: "400px" }}>
+          <div
+            style={{
+              width: "100%",
+              height: "400px",
+            }}
+          >
             <iframe
               width="100%"
               height="100%"

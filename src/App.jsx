@@ -43,7 +43,7 @@ function App() {
     localStorage.setItem("address", address);
   }, [address]);
   return (
-    <SharedData.Provider
+    <SharedData
       value={{
         fullname,
         setFullname,
@@ -87,7 +87,7 @@ function App() {
           </div>
         </CartCountProvider>
       </AuthProvider>
-    </SharedData.Provider>
+    </SharedData>
   );
 }
 
