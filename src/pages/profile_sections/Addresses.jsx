@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { SharedData } from "../../sharedData";
 import LocationSelector from "./locations/leaflet";
 import AddressCard from "./locations/googleMaps";
+import GoogleLocationSelector from "./locations/googleApi";
 const Addresses = () => {
   var {
     fullname,
@@ -34,6 +35,8 @@ const Addresses = () => {
         <button onClick={closeBox}>Add Location</button>
       </div>
       <AddressCard />
+      <AddressCard />
+      <AddressCard />
       <div className="profile-addresses-cards-container">
         {displayNone && (
           <div onClick={closeBox} className="close-addLocation-container">
@@ -54,6 +57,7 @@ const Addresses = () => {
                 <input type="text" id="location-name" />
                 <label htmlFor="location">choose location</label>
                 {/* <LocationSelector /> */}
+                <GoogleLocationSelector />
               </form>
             </div>
           </div>
