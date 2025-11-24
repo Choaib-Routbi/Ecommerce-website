@@ -18,9 +18,18 @@ const ProductPage = () => {
   return (
     <div className="section product-page">
       <div className="product-page-container">
-        <div className="section-title">Product Page</div>
+        <div className="section-title"></div>
         {productPageItem.map((product) => (
-          <div key={product.name} className="product-page-product-card">
+          <>
+            <ProductCard
+              name={product.name}
+              price={product.price}
+              short_description={product.short_description}
+              sales={product.sales}
+              category={product.category}
+            />
+            <>
+              {/* <div key={product.name} className="product-page-product-card">
             <div className="top">
               <div className="left">
                 <div className="product-img"></div>
@@ -41,7 +50,9 @@ const ProductPage = () => {
                 recusandae soluta eveniet atque temporibus sunt.
               </span>
             </div>
-          </div>
+          </div> */}
+            </>
+          </>
         ))}
         <div className="product-page-info"></div>
       </div>

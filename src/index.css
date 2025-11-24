@@ -1160,6 +1160,13 @@ body {
   color: aliceblue;
   box-sizing: border-box;
   overflow: hidden;
+  .product-card {
+    height: 100%;
+    min-width: 100%;
+    .product-name {
+      font-size: 1.3rem;
+    }
+  }
   .product-page-product-card {
     display: grid;
     grid-template-rows: repeat(2, auto);
