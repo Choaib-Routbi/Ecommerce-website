@@ -28,13 +28,18 @@ const ProductPage = () => {
               <div className="right">
                 <span>{product.category}</span>
                 <p className="product-page-name">name : {product.name}</p>
-                <span>sales : [product.sales]</span>
+                <span>sales : {product.sales}</span>
                 <span>rating : {product.rating}</span>
                 <span>price : {product.price} $</span>
               </div>
             </div>
             <div className="down">
-              <span>{product.short_description}</span>
+              <span>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla a
+                doloremque repellendus, ab harum corrupti eligendi dignissimos
+                ad ex mollitia provident optio exercitationem, debitis
+                recusandae soluta eveniet atque temporibus sunt.
+              </span>
             </div>
           </div>
         ))}
