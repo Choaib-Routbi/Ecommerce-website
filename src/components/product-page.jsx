@@ -20,15 +20,23 @@ const ProductPage = () => {
       <div className="product-page-container">
         <div className="section-title">Product Page</div>
         {productPageItem.map((product) => (
-          <ProductCard
-            key={product.name}
-            id={product.id}
-            category={product.category}
-            sales={product.sales}
-            rating={product.rating}
-            name={product.name || ""}
-            price={product.price}
-          />
+          <div key={product.name} className="product-page-product-card">
+            <div className="top">
+              <div className="left">
+                <div className="product-img"></div>
+              </div>
+              <div className="right">
+                <span>{product.category}</span>
+                <p className="product-page-name">name : {product.name}</p>
+                <span>sales : [product.sales]</span>
+                <span>rating : {product.rating}</span>
+                <span>price : {product.price} $</span>
+              </div>
+            </div>
+            <div className="down">
+              <span>{product.short_description}</span>
+            </div>
+          </div>
         ))}
         <div className="product-page-info"></div>
       </div>
