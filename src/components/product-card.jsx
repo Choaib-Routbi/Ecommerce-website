@@ -27,6 +27,7 @@ const ProductCard = ({
     isInCart,
     ADDtotalPriceCount,
     REMOVEtotalPriceCount,
+    displayProduct,
   } = useContext(cartContext);
 
   const product = {
@@ -69,11 +70,15 @@ const ProductCard = ({
       // window.location.reload()
     }
   };
+  const openProductPage = () => {
+    displayProduct(product);
+    navigate("/productpage");
+  };
 
   return (
     <div className="product-card">
       <div className="card-img">
-        <div className="card-img-child"></div>
+        <div onClick={openProductPage} className="card-img-child"></div>
       </div>
       <div className="card-infos">
         <div className="card-text">

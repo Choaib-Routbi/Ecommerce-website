@@ -17,6 +17,7 @@ import SigninPage from "./pages/signupPage";
 import { AuthProvider } from "./userContext";
 import ProtectedRoute from "./protectRoute";
 import { SharedData } from "./sharedData";
+import ProductPage from "./components/product-page";
 
 function App() {
   const [fullname, setFullname] = useState(
@@ -83,6 +84,7 @@ function App() {
               />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SigninPage />} />
+              <Route path="/productpage" element={<ProductPage />} />
             </Routes>
           </div>
         </CartCountProvider>

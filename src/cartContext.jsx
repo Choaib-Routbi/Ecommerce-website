@@ -97,7 +97,6 @@ export function CartCountProvider({ children }) {
   };
 
   const addToCart = (product) => {
-    // remove undefined values from the product
     const cleanedProduct = Object.fromEntries(
       Object.entries(product).filter(([_, v]) => v !== undefined)
     );
@@ -111,19 +110,14 @@ export function CartCountProvider({ children }) {
     console.log("added");
   };
 
-  // const addToCart = (product) => {
-  //   setIncartItems((prev) => {
-  //     const exists = prev.find((item) => item.name === product.name);
-
-  //     if (exists) return prev;
-  //     return [...prev, product];
-  //   });
-  //   console.log("added");
-  // };
-
   const removeFromCart = (productID) => {
     setIncartItems((prev) => prev.filter((item) => item.name !== productID));
     console.log("removed");
+  };
+
+  const [productPageItem, setProductPageItem] = useState([]);
+  const displayProduct = (product) => {
+    setProductPageItem([product]);
   };
   const isInCart = (name) => {
     return incartItems.some((item) => item.name === name);
@@ -139,6 +133,9 @@ export function CartCountProvider({ children }) {
     totalPrice,
     shipping,
     totalPriceARRAY,
+    productPageItem,
+    setProductPageItem,
+    displayProduct,
   };
   return (
     <cartContext.Provider value={contextValue}>{children}</cartContext.Provider>

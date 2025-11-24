@@ -9,7 +9,7 @@ import {
 import ProductCard from "../components/product-card";
 
 const Home = () => {
-  const targetDate = new Date("2025-11-20T20:59:59");
+  const targetDate = new Date("2025-12-20T20:59:59");
 
   const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
 

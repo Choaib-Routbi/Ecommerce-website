@@ -23,7 +23,6 @@ const Addresses = () => {
     console.log(displayNone);
   };
 
-  const [addresses, setAddresses] = useState(["add1", "add2"]);
   useEffect(() => {}, [displayNone]);
   return (
     <div id="addresses" className="profile-section">
@@ -34,9 +33,7 @@ const Addresses = () => {
         </span>
         <button onClick={closeBox}>Add Location</button>
       </div>
-      <AddressCard />
-      <AddressCard />
-      <AddressCard />
+
       <div className="profile-addresses-cards-container">
         {displayNone && (
           <div onClick={closeBox} className="close-addLocation-container">

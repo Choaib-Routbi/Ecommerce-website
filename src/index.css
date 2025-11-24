@@ -892,6 +892,12 @@ body {
         }
         form {
           text-align: left;
+          input {
+            margin-bottom: 20px;
+          }
+          label {
+            margin-bottom: 20px;
+          }
           #location {
             height: 50px;
             width: 100%;
@@ -1140,6 +1146,20 @@ body {
       }
     }
   }
+}
+.product-page-container {
+  height: calc(100vh - 80px);
+  border: solid 1px #3f3c3c;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--main-background);
+  /* background: transparent; */
+  /* ------adjust-bg------- */
+  color: aliceblue;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 @media (max-width: 700px) {
   body {
